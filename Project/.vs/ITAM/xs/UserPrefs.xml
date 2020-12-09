@@ -1,0 +1,42 @@
+﻿<Properties StartupConfiguration="{BC17BC5A-B8D2-CBCD-93BD-B6CC008117BD}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CarPosition.cs">
+    <Files>
+      <File FileName="Assets/Scripts/hintRestart.cs" Line="39" Column="10" IsPinned="True" />
+      <File FileName="Assets/Scripts/CarPosition.cs" Line="17" Column="39" />
+      <File FileName="Assets/Scripts/Rueda.cs" Line="8" Column="32" />
+      <File FileName="Assets/Scripts/MenuControl.cs" Line="48" Column="18" />
+      <File FileName="Assets/Scripts/CameraFollow.cs" Line="72" Column="30" />
+      <File FileName="Assets/Scripts/hintsManager.cs" Line="14" Column="1" />
+      <File FileName="Assets/Scripts/CompletedScripts/LvlCompletedManager.cs" />
+      <File FileName="Assets/Scripts/CompletedScripts/Level1Completed.cs" />
+      <File FileName="Assets/Scripts/CompletedScripts/Level2Complete.cs" />
+      <File FileName="Assets/Scripts/CompletedScripts/Level3Complete.cs" />
+      <File FileName="Assets/Scripts/CompletedScripts/Level4Complete.cs" />
+      <File FileName="Assets/Scripts/CompletedScripts/Level5Complete.cs" />
+      <File FileName="Assets/Scripts/indicador.cs" Line="7" Column="7" />
+      <File FileName="Assets/Scripts/selectedShow.cs" Line="26" Column="10" />
+      <File FileName="Assets/Scripts/showHint.cs" Line="26" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ITAM" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="CompletedScripts" expanded="True" />
+                <Node name="CarPosition.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="afa847e5-8a73-491a-8165-43bd098a4ef1" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
