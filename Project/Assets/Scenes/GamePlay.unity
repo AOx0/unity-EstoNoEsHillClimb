@@ -1312,7 +1312,7 @@ GameObject:
   - component: {fileID: 49048883}
   - component: {fileID: 49048882}
   m_Layer: 5
-  m_Name: Level3
+  m_Name: Level5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8308,10 +8308,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bestLevel1Canvas: {fileID: 1739328601}
-  bestLevel2Canvas: {fileID: 1587365004}
-  bestLevel3Canvas: {fileID: 49048884}
-  bestLevel4Canvas: {fileID: 1523329902}
-  bestLevel5Canvas: {fileID: 1519571181}
+  bestLevel2Canvas: {fileID: 1523329902}
+  bestLevel3Canvas: {fileID: 1587365004}
+  bestLevel4Canvas: {fileID: 1519571181}
+  bestLevel5Canvas: {fileID: 49048884}
 --- !u!1 &566074671
 GameObject:
   m_ObjectHideFlags: 0
@@ -19390,7 +19390,7 @@ GameObject:
   - component: {fileID: 1519571180}
   - component: {fileID: 1519571179}
   m_Layer: 5
-  m_Name: Level5
+  m_Name: Level4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19489,7 +19489,7 @@ GameObject:
   - component: {fileID: 1523329901}
   - component: {fileID: 1523329900}
   m_Layer: 5
-  m_Name: Level4
+  m_Name: Level2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20482,7 +20482,7 @@ GameObject:
   - component: {fileID: 1587365003}
   - component: {fileID: 1587365002}
   m_Layer: 5
-  m_Name: Level2
+  m_Name: Level3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
