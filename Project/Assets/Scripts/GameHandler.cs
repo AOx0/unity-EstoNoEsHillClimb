@@ -603,10 +603,32 @@ public class GameHandler : MonoBehaviour
                 PorcentajeTrack2_2.transform.localPosition = new Vector3 { x = (float)x, y = 1, z = PorcentajeTrack2_2.transform.localPosition.z};
             }
 
-            float car1Position = cocheActualElegido.transform.position.x ;
-            float car2Position = cocheActualElegido2.transform.position.x ;
-            setTracker1Position((-10 + (car1Position*9.85)/100));
-            setTracker2Position((-10 + (car2Position*9.85)/100));
+            if (!terminoJugador1)
+            {
+                PorcentajeTrack1.enabled = true;
+                PorcentajeTrack1_2.enabled = true;
+                float car1Position = cocheActualElegido.transform.position.x ;
+                setTracker1Position((-10 + (car1Position*9.85)/100));
+            } else
+            {
+                PorcentajeTrack1.enabled = false;
+                PorcentajeTrack1_2.enabled = false;
+            }
+
+            if (!terminoJugador2)
+            {
+                PorcentajeTrack2.enabled = true;
+                PorcentajeTrack2_2.enabled = true;
+                float car2Position = cocheActualElegido2.transform.position.x ;
+                setTracker2Position((-10 + (car2Position*9.85)/100));
+            }
+            else
+            {
+                PorcentajeTrack2.enabled = false;
+                PorcentajeTrack2_2.enabled = false;
+            } 
+            
+            
        }
        
 
@@ -1151,8 +1173,19 @@ public class GameHandler : MonoBehaviour
             
             if (pressed(KeyCode.R))
             {
-                setSpeedTo0();
-                setCarLevelPosition(true, false);
+                if (tipoJuego == TipoJuego.Single)
+                {
+                    setSpeedTo0();
+                    setCarLevelPosition(true, false);
+                } else
+                {
+                    if (!terminoJugador1)
+                    {
+                        setSpeedTo0();
+                        setCarLevelPosition(true, false);
+                    }
+                }
+                
             }
 
             if (pressed(KeyCode.UpArrow))
@@ -1165,6 +1198,18 @@ public class GameHandler : MonoBehaviour
             {
                 parkAllCars();
                 stageJuego = StageJuego.Seleccion;
+
+                if (tipoJuego == TipoJuego.Multijugador)
+                {
+                    terminoJugador2 = false;
+                    terminoJugador1 = false;
+
+                    savedJugador1Time = false;
+                    savedJugador2Time = false;
+               
+                    tiempoJugador2 = 0;
+                    tiempoJugador1 = 0;
+                }
             }
         }
 
@@ -1196,6 +1241,17 @@ public class GameHandler : MonoBehaviour
                     stageJuego = StageJuego.SeleccionCocheMulti;
                     player1Confirm = false;
                     player2Confirm = false;
+
+                    terminoJugador2 = false;
+                    terminoJugador1 = false;
+
+                    savedJugador1Time = false;
+                    savedJugador2Time = false;
+               
+                    tiempoJugador2 = 0;
+                    tiempoJugador1 = 0;
+
+                
                 } else
                 {
                     stageJuego = StageJuego.Menu;
@@ -1449,6 +1505,7 @@ public class GameHandler : MonoBehaviour
                 terminoJugador1 = false;
 
                 savedJugador1Time = false;
+                savedJugador2Time = false;
                
                 tiempoJugador2 = 0;
                 tiempoJugador1 = 0;

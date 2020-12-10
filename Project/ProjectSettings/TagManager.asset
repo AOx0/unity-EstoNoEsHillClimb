@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Coches2
+    uniqueID: 4031001473
+    locked: 0
+  - name: Coches1
+    uniqueID: 3876091359
+    locked: 0
