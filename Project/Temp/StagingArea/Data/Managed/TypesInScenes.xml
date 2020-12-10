@@ -19,6 +19,7 @@
 		<type fullname="UnityEngine.AudioBehaviour" preserve="nothing"/>
 		<type fullname="UnityEngine.Rigidbody2D" preserve="nothing"/>
 		<type fullname="UnityEngine.CircleCollider2D" preserve="nothing"/>
+		<type fullname="UnityEngine.EdgeCollider2D" preserve="nothing"/>
 		<type fullname="UnityEngine.BoxCollider2D" preserve="nothing"/>
 		<type fullname="UnityEngine.PolygonCollider2D" preserve="nothing"/>
 		<type fullname="UnityEngine.Joint2D" preserve="nothing"/>

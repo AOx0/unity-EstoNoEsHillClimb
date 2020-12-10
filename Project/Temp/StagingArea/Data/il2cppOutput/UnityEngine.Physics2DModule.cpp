@@ -1398,6 +1398,15 @@ public:
 };
 
 
+// UnityEngine.EdgeCollider2D
+struct  EdgeCollider2D_tF769E30CB0A60A8E8F71D74439FB799410C3D940  : public Collider2D_tD64BE58E48B95D89D349FEAB54D0FE2EEBF83379
+{
+public:
+
+public:
+};
+
+
 // UnityEngine.PolygonCollider2D
 struct  PolygonCollider2D_t360CC66FD7BAF5F4FADE54EB23E58E95D0B8CD81  : public Collider2D_tD64BE58E48B95D89D349FEAB54D0FE2EEBF83379
 {
@@ -2113,6 +2122,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ContactFilter2D_CheckConsistency_Injecte
 	_il2cpp_icall_func = (ContactFilter2D_CheckConsistency_Injected_m4640AA8896FEFE90396C5B47C4FE07930DA918BE_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.ContactFilter2D::CheckConsistency_Injected(UnityEngine.ContactFilter2D&)");
 	_il2cpp_icall_func(____unity_self0);
 }
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
