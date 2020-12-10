@@ -1166,6 +1166,12 @@ public class GameHandler : MonoBehaviour
 
                 carMovement(cocheActualElegido2, 3);
                 carMovement(cocheActualElegido, 2);
+
+                if (pressed(KeyCode.UpArrow) &&  !terminoJugador2)
+                {
+                    setSpeedTo0(false);
+                    setCarLevelPosition(true, true);
+                }
                 
             }
 
@@ -1188,11 +1194,7 @@ public class GameHandler : MonoBehaviour
                 
             }
 
-            if (pressed(KeyCode.UpArrow))
-            {
-                setSpeedTo0(false);
-                setCarLevelPosition(true, true);
-            }
+            
 
             if (pressed(KeyCode.Q))
             {
