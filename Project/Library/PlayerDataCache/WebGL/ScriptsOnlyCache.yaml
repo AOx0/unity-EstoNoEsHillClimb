@@ -15,12 +15,8 @@ ScriptsOnlyBuild:
     - showBestTimes
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
-    Unity.2D.SpriteShape.Editor.dll:
-    - UnityEditor.U2D.SpriteShapeEditorAnalytics
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
@@ -94,13 +90,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13760}
     - Class: 114
-      Script: {instanceID: 14306}
+      Script: {instanceID: 13932}
     - Class: 114
-      Script: {instanceID: 14376}
+      Script: {instanceID: 14142}
     - Class: 114
-      Script: {instanceID: 82072}
+      Script: {instanceID: 14310}
     - Class: 114
-      Script: {instanceID: 82084}
+      Script: {instanceID: 14380}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -568,6 +564,12 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: 520ae60bf849ee549257b3728d278ed9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FinishedView2
+  - hash:
+      serializedVersion: 2
       Hash: 3c2485c8cb29db94e4aabdef2af0a58a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -584,6 +586,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: 520ae60bf849ee549257b3728d278ed9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FinishedView1
   - hash:
       serializedVersion: 2
       Hash: 8cd1cbba27f3cb1717254f668e9e0d5a
@@ -692,18 +700,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 520ae60bf849ee549257b3728d278ed9
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: FinishedView1
-  - hash:
-      serializedVersion: 2
-      Hash: 520ae60bf849ee549257b3728d278ed9
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: FinishedView2
   platform: 20
   scenePathNames:
   - Assets/Scenes/GamePlay.unity
