@@ -74,6 +74,8 @@
     <Compile Include="Assets\Scripts\CompletedScripts\Level3Complete.cs" />
     <Compile Include="Assets\Scripts\CompletedScripts\Level4Complete.cs" />
     <Compile Include="Assets\Scripts\CompletedScripts\Level5Complete.cs" />
+    <Compile Include="Assets\Scripts\FinishView\FinishedView1.cs" />
+    <Compile Include="Assets\Scripts\FinishView\FinishedView2.cs" />
     <Compile Include="Assets\Scripts\GameHandler.cs" />
     <Compile Include="Assets\Scripts\MenuControl.cs" />
     <Compile Include="Assets\Scripts\ShowMusic.cs" />

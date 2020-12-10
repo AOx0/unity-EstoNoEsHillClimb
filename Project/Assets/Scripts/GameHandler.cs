@@ -21,6 +21,11 @@ public class GameHandler : MonoBehaviour
     public static CocheElegido cocheElegido2;
     public static TipoJuego tipoJuego;
 
+    //Mulijugador Leaderboards
+    public Canvas winnerPlayer;
+    public Canvas finalTimePlayer1;
+    public Canvas finalTimePlayer2;
+
     //Multijugador Selección de coche
     public static bool player1Confirm;
     public static bool player2Confirm;
@@ -30,7 +35,12 @@ public class GameHandler : MonoBehaviour
 
     private static int movingCar2;
     private static int breakCar2;
-    
+
+    public static bool terminoJugador1;
+    public static bool terminoJugador2;
+
+    private bool  savedJugador1Time;
+    private bool  savedJugador2Time;
 
     //Music
     public AudioSource music;
@@ -203,6 +213,9 @@ public class GameHandler : MonoBehaviour
         {
             CheckIfUserWin();
             ShowWinMessage();
+        } else
+        {
+            MultiplayerWinHandler();
         }
         
     }
@@ -332,23 +345,17 @@ public class GameHandler : MonoBehaviour
 
             if (tipoJuego == TipoJuego.Multijugador)
             {
-                if (!fondoMulti1.enabled)
-                {
-                    fondoMulti1.enabled = true;
-                }
+                
                 fondoMulti1.transform.position = makeVector(posXCamara, posYCamara, true);
-                fondo.enabled = false;
-                fondoMulti1.enabled = true;
+           
+                
             } else
             {
-                if (fondoMulti1.enabled)
-                {
-                    fondoMulti1.enabled = false;
-                }
+                
                 
                 fondo.transform.position = makeVector(posXCamara, posYCamara, true);
-                fondo.enabled = true;
-                fondoMulti1.enabled = false;
+                
+                
             } 
 
             
@@ -384,9 +391,6 @@ public class GameHandler : MonoBehaviour
                 fix2DCarPositionInLevels2();
                 camara2.transform.position = makeVector(posXCamara2, posYCamara2);
                 fondoMulti2.transform.position = makeVector(posXCamara2, posYCamara2, true);
-            } else
-            {
-                fondoMulti2.enabled = false;
             }
         }
 
@@ -411,6 +415,11 @@ public class GameHandler : MonoBehaviour
         void multi_selectView()
         {
             camara.transform.position = makeVector(-52.17, -13.61);
+        }
+
+        void multiplayerLeaderBoard()
+        {
+            camara.transform.position = makeVector(-52, -29);
         }
 
         if (tipoJuego == TipoJuego.Multijugador && stageJuego == StageJuego.Juego)
@@ -439,6 +448,9 @@ public class GameHandler : MonoBehaviour
             //Mulijugador
             case StageJuego.SeleccionCocheMulti:
                 multi_selectView();
+                break;
+            case StageJuego.PostJuegoMulti:
+                multiplayerLeaderBoard();
                 break;
             
         }
@@ -526,8 +538,14 @@ public class GameHandler : MonoBehaviour
         }
         void updateTimeText1()
         {
-            float time = Time.time - tiempoJugador1;
-            ShowInCanvas(textoTiempoMulti1, ("Time : " + (string.Format("{0:N}", time))));
+            if (!terminoJugador1  && stageJuego == StageJuego.Juego)
+            {
+                float time = Time.time - tiempoJugador1;
+                ShowInCanvas(textoTiempoMulti1, "Time : " + string.Format("{0:N2}", time));
+
+                ShowInCanvas(finalTimePlayer1, "Player 1                " + "Time : " + string.Format("{0:N4}", time));
+            }
+            
 
         }
 
@@ -558,8 +576,14 @@ public class GameHandler : MonoBehaviour
         }
         void updateTimeText2()
         {
-            float time = Time.time - tiempoJugador2;
-            ShowInCanvas(textoTiempoMulti2, ("Time : " + (string.Format("{0:N}", time))));
+            if (!terminoJugador2 && stageJuego == StageJuego.Juego)
+            {
+                float time = Time.time - tiempoJugador2;
+                ShowInCanvas(textoTiempoMulti2, ("Time : " + (string.Format("{0:N2}", time))));
+
+                ShowInCanvas(finalTimePlayer2, "Player 2               " + "Time : " + string.Format("{0:N4}", time));
+            }
+            
 
         }
 
@@ -568,15 +592,15 @@ public class GameHandler : MonoBehaviour
             void setTracker1Position(double x)
             {
                 
-                PorcentajeTrack1.transform.localPosition = new Vector3 { x = (float)x, y = (float)0.5, z = PorcentajeTrack1.transform.localPosition.z};
-                PorcentajeTrack1_2.transform.localPosition = new Vector3 { x = (float)x, y = (float)0.5, z = PorcentajeTrack1_2.transform.localPosition.z};
+                PorcentajeTrack1.transform.localPosition = new Vector3 { x = (float)x, y = 1, z = PorcentajeTrack1.transform.localPosition.z};
+                PorcentajeTrack1_2.transform.localPosition = new Vector3 { x = (float)x, y = 1, z = PorcentajeTrack1_2.transform.localPosition.z};
             }
 
             void setTracker2Position(double x)
             {
                 
-                PorcentajeTrack2.transform.localPosition = new Vector3 { x = (float)x, y = (float)0.5, z = PorcentajeTrack2.transform.localPosition.z};
-                PorcentajeTrack2_2.transform.localPosition = new Vector3 { x = (float)x, y = (float)0.5, z = PorcentajeTrack2_2.transform.localPosition.z};
+                PorcentajeTrack2.transform.localPosition = new Vector3 { x = (float)x, y = 1, z = PorcentajeTrack2.transform.localPosition.z};
+                PorcentajeTrack2_2.transform.localPosition = new Vector3 { x = (float)x, y = 1, z = PorcentajeTrack2_2.transform.localPosition.z};
             }
 
             float car1Position = cocheActualElegido.transform.position.x ;
@@ -997,10 +1021,18 @@ public class GameHandler : MonoBehaviour
             
         }
 
-        void setSpecifiedCarPosition(Rigidbody2D coche, double x, double y)
+        void setSpecifiedCarPosition(Rigidbody2D coche, double x, double y, bool acciones2 = false)
         {
-            coche.transform.position = new Vector2 { x = (float)x, y = (float)y};
-            coche.transform.rotation = new Quaternion { z = 0 };
+            if (!acciones2)
+            {
+                coche.transform.position = new Vector3 { x = (float)x, y = (float)y, z= 0};
+                coche.transform.rotation = new Quaternion { z = 0 };
+            } else
+            {
+                coche.transform.position = new Vector3 { x = (float)x, y = (float)y, z = -10};
+                coche.transform.rotation = new Quaternion { z = 0 };
+            }
+            
         }
 
         void parkAllCars()
@@ -1010,10 +1042,10 @@ public class GameHandler : MonoBehaviour
             setSpecifiedCarPosition(coche3,-26.28,51.5 );
             setSpecifiedCarPosition(coche4,-19.95,51.5 );
 
-            setSpecifiedCarPosition(coche1_2,-31.7,51.5 );
-            setSpecifiedCarPosition(coche2_2,-26.28,51.5 );
-            setSpecifiedCarPosition(coche3_2,-26.28,51.5 );
-            setSpecifiedCarPosition(coche4_2,-19.95,51.5 );
+            setSpecifiedCarPosition(coche1_2,-31.7,51.5, true);
+            setSpecifiedCarPosition(coche2_2,-26.28,51.5, true);
+            setSpecifiedCarPosition(coche3_2,-26.28,51.5, true);
+            setSpecifiedCarPosition(coche4_2,-19.95,51.5, true);
         }
 
         bool pressed(KeyCode key)
@@ -1041,69 +1073,78 @@ public class GameHandler : MonoBehaviour
             if (tipoJuego == TipoJuego.Single) { carMovement(cocheActualElegido, 1); }
             else
             {
-                if (pressed(KeyCode.RightArrow))
+                if (!terminoJugador2)
                 {
-                    movingCar2 = 1;
-                }
+                    if (pressed(KeyCode.RightArrow))
+                    {
+                        movingCar2 = 1;
+                    }
 
-                if (Input.GetKeyUp(KeyCode.RightArrow))
-                {
-                    movingCar2 = 0;
-                }
+                    if (Input.GetKeyUp(KeyCode.RightArrow))
+                    {
+                        movingCar2 = 0;
+                    }
 
-                if (pressed(KeyCode.LeftArrow))
-                {
-                    movingCar2 = -1;
-                }
+                    if (pressed(KeyCode.LeftArrow))
+                    {
+                        movingCar2 = -1;
+                    }
 
-                if (Input.GetKeyUp(KeyCode.LeftArrow))
-                {
-                    movingCar2 = 0;
-                }
+                    if (Input.GetKeyUp(KeyCode.LeftArrow))
+                    {
+                        movingCar2 = 0;
+                    }
 
-                if (pressed(KeyCode.DownArrow))
-                {
-                    breakCar2 = -1;
-                }
+                    if (pressed(KeyCode.DownArrow))
+                    {
+                        breakCar2 = -1;
+                    }
 
-                if (Input.GetKeyUp(KeyCode.DownArrow))
-                {
-                    breakCar2 = 0;
+                    if (Input.GetKeyUp(KeyCode.DownArrow))
+                    {
+                        breakCar2 = 0;
+                    }
                 }
-
                 
 
-                if (pressed(KeyCode.A))
+                
+                if (!terminoJugador1)
                 {
-                    movingCar1 = -1;
+                    if (pressed(KeyCode.A))
+                    {
+                        movingCar1 = -1;
+                    }
+
+                    if (Input.GetKeyUp(KeyCode.A))
+                    {
+                        movingCar1 = 0;
+                    }
+
+                    if (pressed(KeyCode.D))
+                    {
+                        movingCar1 = 1;
+                    }
+
+                    if (Input.GetKeyUp(KeyCode.D))
+                    {
+                        movingCar1 = 0;
+                    }
+
+                    if (pressed(KeyCode.S))
+                    {
+                        breakCar1 = -1;
+                    }
+
+                    if (Input.GetKeyUp(KeyCode.S))
+                    {
+                        breakCar1 = 0;
+                    }
+                    
                 }
 
-                if (Input.GetKeyUp(KeyCode.A))
-                {
-                    movingCar1 = 0;
-                }
-
-                if (pressed(KeyCode.D))
-                {
-                    movingCar1 = 1;
-                }
-
-                if (Input.GetKeyUp(KeyCode.D))
-                {
-                    movingCar1 = 0;
-                }
-
-                if (pressed(KeyCode.S))
-                {
-                    breakCar1 = -1;
-                }
-
-                if (Input.GetKeyUp(KeyCode.S))
-                {
-                    breakCar1 = 0;
-                }
                 carMovement(cocheActualElegido2, 3);
                 carMovement(cocheActualElegido, 2);
+                
             }
 
             if (tipoJuego == TipoJuego.Single) { tipToRestart(); }
@@ -1153,6 +1194,8 @@ public class GameHandler : MonoBehaviour
                 {
                     tipoJuego = TipoJuego.Single;
                     stageJuego = StageJuego.SeleccionCocheMulti;
+                    player1Confirm = false;
+                    player2Confirm = false;
                 } else
                 {
                     stageJuego = StageJuego.Menu;
@@ -1340,7 +1383,13 @@ public class GameHandler : MonoBehaviour
                 }
             }
 
-            returnToMenu();
+            if (pressed(KeyCode.R))
+            {
+                player1Confirm = false;
+                player2Confirm = false;
+                stageJuego = StageJuego.Menu;
+                tipoJuego = TipoJuego.Single;
+            }
 
             if (pressed(KeyCode.Q) && player1Confirm && player2Confirm)
             {
@@ -1389,7 +1438,23 @@ public class GameHandler : MonoBehaviour
             {
                 nextCar2();
             }
+        }
 
+        void leaderboard()
+        {
+            if (pressed(KeyCode.C))
+            {
+
+                terminoJugador2 = false;
+                terminoJugador1 = false;
+
+                savedJugador1Time = false;
+               
+                tiempoJugador2 = 0;
+                tiempoJugador1 = 0;
+
+                stageJuego = StageJuego.SeleccionCocheMulti;
+            }
         }
 
         globalKeys();
@@ -1406,6 +1471,9 @@ public class GameHandler : MonoBehaviour
                 break;
             case StageJuego.SeleccionCoche:
                 selectionCarKeys();
+                break;
+            case StageJuego.PostJuegoMulti:
+                leaderboard();
                 break;
 
             //Multijugador
@@ -1560,6 +1628,61 @@ public class GameHandler : MonoBehaviour
             pressToContinue.enabled = false;
             mensajeVictoria_Fondo.enabled = false;
             NewRecordCanvas.enabled = false;
+        }
+    }
+
+    void MultiplayerWinHandler()
+    {
+        void setSpecifiedCarPosition(Rigidbody2D coche, double x, double y)
+        {
+            coche.transform.position = new Vector2 { x = (float)x, y = (float)y};
+            coche.transform.rotation = new Quaternion { z = 0 };
+        }
+
+        if (stageJuego == StageJuego.Juego)
+        {
+            if (cocheActualElegido.transform.position.x >= 200)
+            {
+                terminoJugador1 = true;
+
+                if (!savedJugador1Time)
+                {
+                    
+                    savedJugador1Time = false;
+                    movimiento1 = 0;
+                    movingCar1 = 0;
+                    breakCar1 = 0;
+                    setSpecifiedCarPosition(cocheActualElegido,-19.95,51.5 );
+                }
+
+                if (!terminoJugador2)
+                {
+                    ShowInCanvas(winnerPlayer, "Player 1");
+                }
+            }
+
+            if (cocheActualElegido2.transform.position.x >= 200)
+            {
+                terminoJugador2 = true;
+                if (!savedJugador2Time)
+                {
+                    savedJugador2Time = false;
+                    movimiento2 = 0;
+                    movingCar2 = 0;
+                    breakCar2 = 0;
+                    setSpecifiedCarPosition(cocheActualElegido2,-19.95,51.5 );
+                }
+
+                if (!terminoJugador1)
+                {
+                    ShowInCanvas(winnerPlayer, "Player 2");
+                }
+            }
+
+            if (terminoJugador1 && terminoJugador2)
+            {
+                stageJuego = StageJuego.PostJuegoMulti;
+            }
         }
     }
 }
