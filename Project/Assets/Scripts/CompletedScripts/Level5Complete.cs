@@ -15,10 +15,17 @@ public class Level5Complete : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameHandler.completedLvl5 == true)
+        if (GameHandler.tipoJuego == GameHandler.TipoJuego.Single)
         {
-            lvlText.enabled = true;
-            lvlThick.enabled = true;
+            if (GameHandler.completedLvl5 == true)
+            {
+                lvlText.enabled = true;
+                lvlThick.enabled = true;
+            } else
+            {
+                lvlText.enabled = false;
+                lvlThick.enabled = false;
+            }
         } else
         {
             lvlText.enabled = false;

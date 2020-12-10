@@ -55,10 +55,21 @@ public class showBestTimes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ShowBestTime(bestLevel1, bestLevel1Canvas);
-        ShowBestTime(bestLevel2, bestLevel2Canvas);
-        ShowBestTime(bestLevel3, bestLevel3Canvas);
-        ShowBestTime(bestLevel4, bestLevel4Canvas);
-        ShowBestTime(bestLevel5, bestLevel5Canvas);
+        if (GameHandler.tipoJuego == GameHandler.TipoJuego.Single)
+        {
+            ShowBestTime(bestLevel1, bestLevel1Canvas);
+            ShowBestTime(bestLevel2, bestLevel2Canvas);
+            ShowBestTime(bestLevel3, bestLevel3Canvas);
+            ShowBestTime(bestLevel4, bestLevel4Canvas);
+            ShowBestTime(bestLevel5, bestLevel5Canvas);
+        } else
+        {
+            bestLevel1Canvas.enabled = false;
+            bestLevel2Canvas.enabled = false;
+            bestLevel3Canvas.enabled = false;
+            bestLevel4Canvas.enabled = false;
+            bestLevel5Canvas.enabled = false;
+        }
+        
     }
 }

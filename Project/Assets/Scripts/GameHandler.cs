@@ -19,7 +19,18 @@ public class GameHandler : MonoBehaviour
     //Opciones de usuario
     public static CocheElegido cocheElegido;
     public static CocheElegido cocheElegido2;
-    private TipoJuego tipoJuego;
+    public static TipoJuego tipoJuego;
+
+    //Multijugador Selección de coche
+    public static bool player1Confirm;
+    public static bool player2Confirm;
+
+    private static int movingCar1;
+    private static int breakCar1;
+
+    private static int movingCar2;
+    private static int breakCar2;
+    
 
     //Music
     public AudioSource music;
@@ -36,19 +47,38 @@ public class GameHandler : MonoBehaviour
 
     //Seguimiento de cámara
     public Camera camara;
+
+    public Camera camara1;
     public Camera camara2;
+
     public Rigidbody2D coche1;
     public Rigidbody2D coche2;
     public Rigidbody2D coche3;
     public Rigidbody2D coche4;
 
+    public Rigidbody2D coche1_2;
+    public Rigidbody2D coche2_2;
+    public Rigidbody2D coche3_2;
+    public Rigidbody2D coche4_2;
+                             
     public SpriteRenderer fondo;
+
+    public SpriteRenderer fondoMulti1;
+    public SpriteRenderer fondoMulti2;
+
     public Rigidbody2D ayudas;
 
     // Elementos del juego (Estado de Coche Actual)
     private float posXCamara;
     private float posYCamara;
     private float movimiento;
+
+    private float movimiento1;
+    private float movimiento2;
+
+    private float posXCamara2;
+    private float posYCamara2;
+    
 
     private float tiempo1EnAire;
     private bool _Coche1EnAire = false;
@@ -71,6 +101,27 @@ public class GameHandler : MonoBehaviour
         }
     }
 
+    private float tiempo2EnAire;
+    private bool _Coche2EnAire = false;
+    private bool Coche2EnAire
+    {
+        get
+        {
+            return Coche2EnAire;
+        }
+        set
+        {
+            if (_Coche2EnAire == false && value)
+            {
+                tiempo2EnAire = Time.time;
+            }
+
+            _Coche2EnAire = value;
+
+            
+        }
+    }
+
     // Estado del juego
     private int levelActual;
     private StageJuego stageJuego;
@@ -79,9 +130,13 @@ public class GameHandler : MonoBehaviour
 
 
     private float tiempoJugador1;
+    private float tiempoJugador2;
 
     // Canvas de Texto
     public Canvas textoTiempo1;
+
+    public Canvas textoTiempoMulti1;
+    public Canvas textoTiempoMulti2;
 
     public Canvas mensajeVictoria_Nivel;
     public Canvas mensajeVictoria_Tiempo;
@@ -91,15 +146,35 @@ public class GameHandler : MonoBehaviour
 
     public SpriteRenderer PorcentajeTrackSolitario;
 
+    public SpriteRenderer PorcentajeTrack1;
+    public SpriteRenderer PorcentajeTrack2;
+
+    public SpriteRenderer PorcentajeTrack1_2;
+    public SpriteRenderer PorcentajeTrack2_2;
+
     //Indicador de "velocidad" y aconsejamiento de reinicio
-    public SpriteRenderer indicadorSprite;
+    public SpriteRenderer indicadorSpriteSolo;
+
+    public SpriteRenderer indicadorSprite1;
+    public SpriteRenderer indicadorSprite2;
+
+    
+
     public SpriteRenderer hintReiniciar;
 
     // Start is called before the first frame update
     void Start()
     {
         tiempoJugador1 = 0;
+        tiempoJugador2 = 0;
+
+        movimiento1 = 0;
+        movimiento2 = 0;
+
         musicEnabled = true;
+
+        player1Confirm = false;
+        player2Confirm = false;
 
         cocheElegido = CocheElegido.Uno;
         cocheElegido2 = CocheElegido.Uno;
@@ -107,6 +182,8 @@ public class GameHandler : MonoBehaviour
         levelActual = 0;
         stageJuego = StageJuego.Menu;
         tipoJuego = TipoJuego.Single;
+
+        
     }
 
     // Update is called once per frame
@@ -115,14 +192,19 @@ public class GameHandler : MonoBehaviour
         cocheActualElegido = CocheElegidoActual();
         cocheActualElegido2 = CocheElegidoActual(true);
         KeyHandler();
-        if (stageJuego == StageJuego.Juego)
+        if (stageJuego == StageJuego.Juego )
         {
             UpdateIndicationsUI();
         }
         
         CameraFollow();
-        CheckIfUserWin();
-        ShowWinMessage();
+
+        if (tipoJuego == TipoJuego.Single)
+        {
+            CheckIfUserWin();
+            ShowWinMessage();
+        }
+        
     }
 
 // MARK: - Enums
@@ -136,16 +218,26 @@ public class GameHandler : MonoBehaviour
 
     enum StageJuego
     {
+        // General
         Menu,
+
+        // Solo
         Seleccion,
         SeleccionCoche,
         PreJuego, // Cargado
         Juego,
         PostJuego, // Victoria
+
+        //Multijugador
+        SeleccionMulti,
+        SeleccionCocheMulti,
+        PreJuegoMulti,
+        JuegoMulti,
+        PostJuegoMulti,
     }
 
 
-    enum TipoJuego
+    public enum TipoJuego
     {
         Single,
         Multijugador,
@@ -167,16 +259,16 @@ public class GameHandler : MonoBehaviour
         switch (segundoJugador ? cocheElegido2 : cocheElegido)
         {
             case CocheElegido.Uno:
-                cocheActual = coche1;
+                cocheActual = segundoJugador ? coche1_2 : coche1;
                 break;
             case CocheElegido.Dos:
-                cocheActual = coche2;
+                cocheActual = segundoJugador ? coche2_2 : coche2;
                 break;
             case CocheElegido.Tres:
-                cocheActual = coche3;
+                cocheActual = segundoJugador ? coche3_2 : coche3;
                 break;
             case CocheElegido.Cuatro:
-                cocheActual = coche4;
+                cocheActual = segundoJugador ? coche4_2 : coche4;
                 break;
         }
         return cocheActual;
@@ -228,8 +320,74 @@ public class GameHandler : MonoBehaviour
 
             get2DCarPosition();
             fix2DCarPositionInLevels();
-            camara.transform.position = makeVector(posXCamara, posYCamara);
-            fondo.transform.position = makeVector(posXCamara, posYCamara, true);
+
+            if (tipoJuego == TipoJuego.Multijugador)
+            {
+                camara1.transform.position = makeVector(posXCamara, posYCamara);
+            } else
+            {
+                camara.transform.position = makeVector(posXCamara, posYCamara);
+            }
+            
+
+            if (tipoJuego == TipoJuego.Multijugador)
+            {
+                if (!fondoMulti1.enabled)
+                {
+                    fondoMulti1.enabled = true;
+                }
+                fondoMulti1.transform.position = makeVector(posXCamara, posYCamara, true);
+                fondo.enabled = false;
+                fondoMulti1.enabled = true;
+            } else
+            {
+                if (fondoMulti1.enabled)
+                {
+                    fondoMulti1.enabled = false;
+                }
+                
+                fondo.transform.position = makeVector(posXCamara, posYCamara, true);
+                fondo.enabled = true;
+                fondoMulti1.enabled = false;
+            } 
+
+            
+
+            if (tipoJuego == TipoJuego.Multijugador)
+            {
+                void IMP_fix2DCarPositionInLevels2(int level, double fixedY)
+                {
+                    if (levelActual == level)
+                    {
+                        if (posYCamara2 < fixedY)
+                        {
+                            posYCamara2 = (float)fixedY;
+                        }
+                    }
+        
+                }
+
+                // Calls to fix all positions in levels that require it
+                void fix2DCarPositionInLevels2()
+                {
+                    IMP_fix2DCarPositionInLevels2(5, 0.9);
+                    IMP_fix2DCarPositionInLevels2(3, -31);
+                }
+
+                void get2DCarPosition2()
+                {
+                    posXCamara2 = cocheActualElegido2.transform.position.x;
+                    posYCamara2 = cocheActualElegido2.transform.position.y;
+                }
+
+                get2DCarPosition2();
+                fix2DCarPositionInLevels2();
+                camara2.transform.position = makeVector(posXCamara2, posYCamara2);
+                fondoMulti2.transform.position = makeVector(posXCamara2, posYCamara2, true);
+            } else
+            {
+                fondoMulti2.enabled = false;
+            }
         }
 
         // Sets the camera to view the menu
@@ -250,7 +408,18 @@ public class GameHandler : MonoBehaviour
             camara.transform.position = makeVector(-28.97, 11.33);
         }
 
-        
+        void multi_selectView()
+        {
+            camara.transform.position = makeVector(-52.17, -13.61);
+        }
+
+        if (tipoJuego == TipoJuego.Multijugador && stageJuego == StageJuego.Juego)
+        {
+            camara.enabled = false;
+        } else
+        {
+            camara.enabled = true;
+        }
 
         switch (stageJuego)
         {
@@ -266,6 +435,11 @@ public class GameHandler : MonoBehaviour
             case StageJuego.Juego:
                 gameView();
                 break;
+
+            //Mulijugador
+            case StageJuego.SeleccionCocheMulti:
+                multi_selectView();
+                break;
             
         }
         
@@ -280,7 +454,7 @@ public class GameHandler : MonoBehaviour
 
             void rotateBody(double degrees)
             {
-                indicadorSprite.transform.rotation = Quaternion.Euler(Vector3.forward * (float)degrees);
+                indicadorSpriteSolo.transform.rotation = Quaternion.Euler(Vector3.forward * (float)degrees);
             }
 
         
@@ -323,6 +497,95 @@ public class GameHandler : MonoBehaviour
 
         }
 
+        // Multijugador
+
+        void changeSpeedUIState1()
+        {
+
+            void rotateBody(double degrees)
+            {
+                indicadorSprite1.transform.rotation = Quaternion.Euler(Vector3.forward * (float)degrees);
+            }
+
+        
+            if (movimiento1 >= 0)
+            {
+                if (movimiento1 * -0.2 >= -200)
+                {
+                    rotateBody((movimiento1 * -0.2));
+                } else
+                {
+                    rotateBody((movimiento1 * -0.0033) - (200));
+                }
+            }
+
+            if (movimiento1 < 0)
+            {
+                rotateBody((int)(movimiento1 * -0.04));
+            }
+        }
+        void updateTimeText1()
+        {
+            float time = Time.time - tiempoJugador1;
+            ShowInCanvas(textoTiempoMulti1, ("Time : " + (string.Format("{0:N}", time))));
+
+        }
+
+        void changeSpeedUIState2()
+        {
+
+            void rotateBody(double degrees)
+            {
+                indicadorSprite2.transform.rotation = Quaternion.Euler(Vector3.forward * (float)degrees);
+            }
+
+        
+            if (movimiento2 >= 0)
+            {
+                if (movimiento2 * -0.2 >= -200)
+                {
+                    rotateBody((movimiento2 * -0.2));
+                } else
+                {
+                    rotateBody((movimiento2 * -0.0033) - (200));
+                }
+            }
+
+            if (movimiento2 < 0)
+            {
+                rotateBody((int)(movimiento2 * -0.04));
+            }
+        }
+        void updateTimeText2()
+        {
+            float time = Time.time - tiempoJugador2;
+            ShowInCanvas(textoTiempoMulti2, ("Time : " + (string.Format("{0:N}", time))));
+
+        }
+
+       void updateTrackMinimapMulti()
+       {
+            void setTracker1Position(double x)
+            {
+                
+                PorcentajeTrack1.transform.localPosition = new Vector3 { x = (float)x, y = (float)0.5, z = PorcentajeTrack1.transform.localPosition.z};
+                PorcentajeTrack1_2.transform.localPosition = new Vector3 { x = (float)x, y = (float)0.5, z = PorcentajeTrack1_2.transform.localPosition.z};
+            }
+
+            void setTracker2Position(double x)
+            {
+                
+                PorcentajeTrack2.transform.localPosition = new Vector3 { x = (float)x, y = (float)0.5, z = PorcentajeTrack2.transform.localPosition.z};
+                PorcentajeTrack2_2.transform.localPosition = new Vector3 { x = (float)x, y = (float)0.5, z = PorcentajeTrack2_2.transform.localPosition.z};
+            }
+
+            float car1Position = cocheActualElegido.transform.position.x ;
+            float car2Position = cocheActualElegido2.transform.position.x ;
+            setTracker1Position((-10 + (car1Position*9.85)/100));
+            setTracker2Position((-10 + (car2Position*9.85)/100));
+       }
+       
+
         if (tipoJuego == TipoJuego.Single)
         {
             PorcentajeTrackSolitario.enabled = true;
@@ -333,6 +596,13 @@ public class GameHandler : MonoBehaviour
         else
         {
             PorcentajeTrackSolitario.enabled = false;
+            changeSpeedUIState1();
+            updateTimeText1();
+
+            changeSpeedUIState2();
+            updateTimeText2();
+
+            updateTrackMinimapMulti();
         }
 
     }
@@ -355,36 +625,54 @@ public class GameHandler : MonoBehaviour
             }   
         }
 
-        void setCarPosition(double x, double y)
+        void setCarPosition(double x, double y, bool procesoCoche2 = false)
         {
-            cocheActualElegido.transform.position = new Vector2 { x = (float)x, y = (float)y};
-            cocheActualElegido.transform.rotation = new Quaternion { z = 0 };
+            if (!procesoCoche2)
+            {
+                cocheActualElegido.transform.position = new Vector2 { x = (float)x, y = (float)y};
+                cocheActualElegido.transform.rotation = new Quaternion { z = 0 };
+            } else
+            {
+                cocheActualElegido2.transform.position = new Vector2 { x = (float)x, y = (float)y};
+                cocheActualElegido2.transform.rotation = new Quaternion { z = 0 };
+            } 
+            
             
         }
 
-        void setCarLevelPosition(bool restart = false)
+        void setCarLevelPosition(bool restart = false, bool proceso2Coche = false)
         {
             if (stageJuego == StageJuego.PreJuego || restart == true) {
                 
 
                 // Inicia el tiempo del usuarui
-                tiempoJugador1 = Time.time;
+                if (!restart && tipoJuego == TipoJuego.Multijugador)
+                {
+                    tiempoJugador1 = Time.time;
+                    tiempoJugador2 = Time.time;
+                }
+
+                if (tipoJuego == TipoJuego.Single)
+                {
+                    tiempoJugador1 = Time.time;
+                }
+                
                 switch (levelActual)
                 {
                     case 1:
-                        setCarPosition((float)0, (float)32.71);
+                        setCarPosition((float)0, (float)32.7, proceso2Coche);
                         break;
                     case 2:
-                        setCarPosition((float)0, (float)-86.07);
+                        setCarPosition((float)0, (float)-86.07, proceso2Coche);
                         break;
                     case 3:
-                        setCarPosition((float)0, (float)-28.5);
+                        setCarPosition((float)0, (float)-28.5, proceso2Coche);
                         break;
                     case 5:
-                        setCarPosition((float)0, (float)1);
+                        setCarPosition((float)0, (float)1, proceso2Coche);
                         break;
                     case 4:
-                        setCarPosition((float)0, (float)-55.3);
+                        setCarPosition((float)0, (float)-55.3, proceso2Coche);
                         break;
                 }
                 stageJuego = StageJuego.Juego;
@@ -392,7 +680,7 @@ public class GameHandler : MonoBehaviour
         }
 
         // Handler de movimiento  
-        void carMovement(Rigidbody2D coche)
+        void carMovement(Rigidbody2D coche, int modo = 1)
         {
             WheelJoint2D rueda1 = coche.gameObject.transform.GetChild(0).gameObject.GetComponent<WheelJoint2D>();
             WheelJoint2D rueda2 = coche.gameObject.transform.GetChild(1).gameObject.GetComponent<WheelJoint2D>();
@@ -457,7 +745,6 @@ public class GameHandler : MonoBehaviour
                 rueda1.motor = new JointMotor2D { motorSpeed = movimiento , maxMotorTorque = 10000 };
                 
             }
-
             void singleHorizontalMovement()
             {
                 float speed = Input.GetAxisRaw("Vertical");
@@ -486,36 +773,248 @@ public class GameHandler : MonoBehaviour
                 }
             }
 
-            if (tipoJuego == GameHandler.TipoJuego.Single && stageJuego == GameHandler.StageJuego.Juego)
+            void mutliVerticalMovement1()
             {
-                singleVerticalMovement();
-                singleHorizontalMovement();
+
+                float movimientoAntes = movimiento1;
+                float speed = movingCar1;
+
+                Coche1EnAire = (coche.gameObject.transform.GetChild(0).gameObject.GetComponent<CircleCollider2D>().IsTouchingLayers() == false && coche.gameObject.transform.GetChild(1).gameObject.GetComponent<CircleCollider2D>().IsTouchingLayers() == false && coche.gameObject.GetComponent<Rigidbody2D>().IsTouchingLayers() == false);
+                
+                if (speed == 1)
+                {
+                    if ((movimiento1 + speed * (10 * ((cocheElegido == CocheElegido.Tres || cocheElegido == CocheElegido.Cuatro) ? 2 : 1))) <= ((cocheElegido == CocheElegido.Tres || cocheElegido == CocheElegido.Cuatro) ? 1500 : 1000))
+                    {
+                        movimiento1 += speed * (10 * ((cocheElegido == CocheElegido.Tres || cocheElegido == CocheElegido.Cuatro) ? 2 : 1));
+                    }
+                    if (movimiento1 < 0)
+                    {
+                        movimiento1 += speed * 20;
+                    }
+ 
+                    // Rotates in the air
+                    if (_Coche1EnAire && (Time.time - tiempo1EnAire) > 0.7)
+                    {
+                        float PreviousZ = coche.transform.rotation.z;
+                        PreviousZ = (float)(PreviousZ + (PreviousZ > 1 ? (PreviousZ*0.5) : (PreviousZ*-0.5)));
+                        coche.transform.Rotate(new Vector3 { z = PreviousZ + 2 });
+                    }
+
+                }
+
+                
+
+                if (speed == -1)
+                {
+                    if ((movimiento1 + speed * 15) >= -500)
+                    {
+                        movimiento1 += speed * 15;
+                    }
+
+                    if (_Coche1EnAire && (Time.time - tiempo1EnAire) > 0.7)
+                    {
+                        float PreviousZ = coche.transform.rotation.z;
+                        PreviousZ = (float)(PreviousZ - (PreviousZ > 1 ? (PreviousZ*-0.5) : (PreviousZ*0.5)));
+                        coche.transform.Rotate(new Vector3 { z = PreviousZ - 2 });
+                    }
+                }
+                        
+
+                if (movimiento1 >= 1 && movimientoAntes == movimiento1)
+                {
+                    movimiento1 -= 2;
+                }
+
+                if (movimiento1 < 0 && movimientoAntes == movimiento1)
+                {
+                    movimiento1 += 10;
+                }
+
+                rueda2.motor = new JointMotor2D { motorSpeed = movimiento1 , maxMotorTorque = 10000 };
+                rueda1.motor = new JointMotor2D { motorSpeed = movimiento1 , maxMotorTorque = 10000 };
+                
+            }
+            void mutliHorizontalMovement1()
+            {
+                float speed = breakCar1;
+
+                if (speed == -1)
+                {
+
+                    if ((movimiento1 + (speed * 35)) >= 0)
+                    {
+                        movimiento1 += speed * 35;
+                    }
+                    if (movimiento1 < 0)
+                    {
+                        if (movimiento1 % 2 != 0)
+                        {
+                            movimiento1 -= 1;
+                        }
+                        movimiento1 += 20;
+                    }
+
+                    rueda2.motor = new JointMotor2D { motorSpeed = movimiento1 , maxMotorTorque = 10000 };
+                    rueda1.motor = new JointMotor2D { motorSpeed = movimiento1 , maxMotorTorque = 10000 };
+
+
+                    
+                }
+            }
+
+            void mutliVerticalMovement2()
+            {
+
+                float movimientoAntes = movimiento2;
+                float speed = movingCar2;
+
+                Coche2EnAire = (coche.gameObject.transform.GetChild(0).gameObject.GetComponent<CircleCollider2D>().IsTouchingLayers() == false && coche.gameObject.transform.GetChild(1).gameObject.GetComponent<CircleCollider2D>().IsTouchingLayers() == false && coche.gameObject.GetComponent<Rigidbody2D>().IsTouchingLayers() == false);
+                
+                if (speed == 1)
+                {
+                    if ((movimiento2 + speed * (10 * ((cocheElegido2 == CocheElegido.Tres || cocheElegido2 == CocheElegido.Cuatro) ? 2 : 1))) <= ((cocheElegido2 == CocheElegido.Tres || cocheElegido2 == CocheElegido.Cuatro) ? 1500 : 1000))
+                    {
+                        movimiento2 += speed * (10 * ((cocheElegido2 == CocheElegido.Tres || cocheElegido2 == CocheElegido.Cuatro) ? 2 : 1));
+                    }
+                    if (movimiento2 < 0)
+                    {
+                        movimiento2 += speed * 20;
+                    }
+ 
+                    // Rotates in the air
+                    if (_Coche2EnAire && (Time.time - tiempo2EnAire) > 0.7)
+                    {
+                        float PreviousZ = coche.transform.rotation.z;
+                        PreviousZ = (float)(PreviousZ + (PreviousZ > 1 ? (PreviousZ*0.5) : (PreviousZ*-0.5)));
+                        coche.transform.Rotate(new Vector3 { z = PreviousZ + 2 });
+                    }
+
+                }
+
+                
+
+                if (speed == -1)
+                {
+                    if ((movimiento2 + speed * 15) >= -500)
+                    {
+                        movimiento2 += speed * 15;
+                    }
+
+                    if (_Coche2EnAire && (Time.time - tiempo2EnAire) > 0.7)
+                    {
+                        float PreviousZ = coche.transform.rotation.z;
+                        PreviousZ = (float)(PreviousZ - (PreviousZ > 1 ? (PreviousZ*-0.5) : (PreviousZ*0.5)));
+                        coche.transform.Rotate(new Vector3 { z = PreviousZ - 2 });
+                    }
+                }
+                        
+
+                if (movimiento2 >= 1 && movimientoAntes == movimiento2)
+                {
+                    movimiento2 -= 2;
+                }
+
+                if (movimiento2 < 0 && movimientoAntes == movimiento2)
+                {
+                    movimiento2 += 10;
+                }
+
+                rueda2.motor = new JointMotor2D { motorSpeed = movimiento2 , maxMotorTorque = 10000 };
+                rueda1.motor = new JointMotor2D { motorSpeed = movimiento2 , maxMotorTorque = 10000 };
+                
+            }
+            void mutliHorizontalMovement2()
+            {
+                float speed = breakCar2;
+
+                if (speed == -1)
+                {
+
+                    if ((movimiento2 + (speed * 35)) >= 0)
+                    {
+                        movimiento2 += speed * 35;
+                    }
+                    if (movimiento2 < 0)
+                    {
+                        if (movimiento2 % 2 != 0)
+                        {
+                            movimiento2 -= 1;
+                        }
+                        movimiento2 += 20;
+                    }
+
+                    rueda2.motor = new JointMotor2D { motorSpeed = movimiento2 , maxMotorTorque = 10000 };
+                    rueda1.motor = new JointMotor2D { motorSpeed = movimiento2 , maxMotorTorque = 10000 };
+
+
+                    
+                }
+            }
+
+            switch (modo)
+            {
+                case 1:
+                    singleVerticalMovement();
+                    singleHorizontalMovement();
+                    break;
+                case 2:
+                    mutliVerticalMovement1();
+                    mutliHorizontalMovement1();
+                    break;
+                case 3:
+                    mutliVerticalMovement2();
+                    mutliHorizontalMovement2();
+                    break;
+
             }
             
         }
 
-        void setSpeedTo0()
+        void setSpeedTo0(bool jugador1 = true)
         {
-            WheelJoint2D rueda1 = cocheActualElegido.gameObject.transform.GetChild(0).gameObject.GetComponent<WheelJoint2D>();
-            WheelJoint2D rueda2 = cocheActualElegido.gameObject.transform.GetChild(1).gameObject.GetComponent<WheelJoint2D>();
+            if (jugador1)
+            {
+                WheelJoint2D rueda1 = cocheActualElegido.gameObject.transform.GetChild(0).gameObject.GetComponent<WheelJoint2D>();
+                WheelJoint2D rueda2 = cocheActualElegido.gameObject.transform.GetChild(1).gameObject.GetComponent<WheelJoint2D>();
 
-            rueda2.motor = new JointMotor2D { motorSpeed = 1, maxMotorTorque = 100};
-            rueda1.motor = new JointMotor2D { motorSpeed = 1, maxMotorTorque = 100};
+                rueda2.motor = new JointMotor2D { motorSpeed = 1, maxMotorTorque = 100};
+                rueda1.motor = new JointMotor2D { motorSpeed = 1, maxMotorTorque = 100};
+
+                movimiento1 = 0;
+                movimiento = 0;
+            } else
+            {
+                WheelJoint2D rueda1 = cocheActualElegido2.gameObject.transform.GetChild(0).gameObject.GetComponent<WheelJoint2D>();
+                WheelJoint2D rueda2 = cocheActualElegido2.gameObject.transform.GetChild(1).gameObject.GetComponent<WheelJoint2D>();
+
+                rueda2.motor = new JointMotor2D { motorSpeed = 1, maxMotorTorque = 100};
+                rueda1.motor = new JointMotor2D { motorSpeed = 1, maxMotorTorque = 100};
+
+                movimiento2 = 0;
+            }
+            
+
+            
         }
 
         void setSpecifiedCarPosition(Rigidbody2D coche, double x, double y)
-            {
-                coche.transform.position = new Vector2 { x = (float)x, y = (float)y};
-                coche.transform.rotation = new Quaternion { z = 0 };
-            }
+        {
+            coche.transform.position = new Vector2 { x = (float)x, y = (float)y};
+            coche.transform.rotation = new Quaternion { z = 0 };
+        }
 
-           void parkAllCars()
-           {
-                setSpecifiedCarPosition(coche1,-31.7,51.5 );
-                setSpecifiedCarPosition(coche2,-26.28,51.5 );
-                setSpecifiedCarPosition(coche3,-26.28,51.5 );
-                setSpecifiedCarPosition(coche4,-19.95,51.5 );
-           }
+        void parkAllCars()
+        {
+            setSpecifiedCarPosition(coche1,-31.7,51.5 );
+            setSpecifiedCarPosition(coche2,-26.28,51.5 );
+            setSpecifiedCarPosition(coche3,-26.28,51.5 );
+            setSpecifiedCarPosition(coche4,-19.95,51.5 );
+
+            setSpecifiedCarPosition(coche1_2,-31.7,51.5 );
+            setSpecifiedCarPosition(coche2_2,-26.28,51.5 );
+            setSpecifiedCarPosition(coche3_2,-26.28,51.5 );
+            setSpecifiedCarPosition(coche4_2,-19.95,51.5 );
+        }
 
         bool pressed(KeyCode key)
         {
@@ -539,16 +1038,86 @@ public class GameHandler : MonoBehaviour
 
         void gameKeys()
         {
-            if (tipoJuego == TipoJuego.Single)
+            if (tipoJuego == TipoJuego.Single) { carMovement(cocheActualElegido, 1); }
+            else
             {
-                carMovement(cocheActualElegido);
+                if (pressed(KeyCode.RightArrow))
+                {
+                    movingCar2 = 1;
+                }
+
+                if (Input.GetKeyUp(KeyCode.RightArrow))
+                {
+                    movingCar2 = 0;
+                }
+
+                if (pressed(KeyCode.LeftArrow))
+                {
+                    movingCar2 = -1;
+                }
+
+                if (Input.GetKeyUp(KeyCode.LeftArrow))
+                {
+                    movingCar2 = 0;
+                }
+
+                if (pressed(KeyCode.DownArrow))
+                {
+                    breakCar2 = -1;
+                }
+
+                if (Input.GetKeyUp(KeyCode.DownArrow))
+                {
+                    breakCar2 = 0;
+                }
+
+                
+
+                if (pressed(KeyCode.A))
+                {
+                    movingCar1 = -1;
+                }
+
+                if (Input.GetKeyUp(KeyCode.A))
+                {
+                    movingCar1 = 0;
+                }
+
+                if (pressed(KeyCode.D))
+                {
+                    movingCar1 = 1;
+                }
+
+                if (Input.GetKeyUp(KeyCode.D))
+                {
+                    movingCar1 = 0;
+                }
+
+                if (pressed(KeyCode.S))
+                {
+                    breakCar1 = -1;
+                }
+
+                if (Input.GetKeyUp(KeyCode.S))
+                {
+                    breakCar1 = 0;
+                }
+                carMovement(cocheActualElegido2, 3);
+                carMovement(cocheActualElegido, 2);
             }
+
+            if (tipoJuego == TipoJuego.Single) { tipToRestart(); }
             
-            tipToRestart();
             if (pressed(KeyCode.R))
             {
                 setSpeedTo0();
-                setCarLevelPosition(true);
+                setCarLevelPosition(true, false);
+            }
+
+            if (pressed(KeyCode.UpArrow))
+            {
+                setSpeedTo0(false);
+                setCarLevelPosition(true, true);
             }
 
             if (pressed(KeyCode.Q))
@@ -569,17 +1138,42 @@ public class GameHandler : MonoBehaviour
             {
                 stageJuego = StageJuego.Seleccion;
             }
+
+            if (pressed(KeyCode.F))
+            {
+                stageJuego = StageJuego.SeleccionCocheMulti;
+            }
         }
 
         void selectionLvlKeys()
         {
-            returnToMenu();
+            if (pressed(KeyCode.R))
+            {
+                if (tipoJuego == TipoJuego.Multijugador)
+                {
+                    tipoJuego = TipoJuego.Single;
+                    stageJuego = StageJuego.SeleccionCocheMulti;
+                } else
+                {
+                    stageJuego = StageJuego.Menu;
+                }
+                
+            }
+
+            void setCar2PositionLevelInit()
+            {
+                if (tipoJuego == TipoJuego.Multijugador)
+                {
+                    setCarLevelPosition(true, true);
+                }
+            }
 
             if (pressed(KeyCode.Alpha1) || pressed(KeyCode.Keypad1))
             {
                 levelActual = 1;
                 stageJuego = StageJuego.PreJuego;
                 setCarLevelPosition();
+                setCar2PositionLevelInit();
             }
 
             if (pressed(KeyCode.Alpha2) || pressed(KeyCode.Keypad2))
@@ -587,6 +1181,7 @@ public class GameHandler : MonoBehaviour
                 levelActual = 2;
                 stageJuego = StageJuego.PreJuego;
                 setCarLevelPosition();
+                setCar2PositionLevelInit();
             }
 
             if (pressed(KeyCode.Alpha3) || pressed(KeyCode.Keypad3))
@@ -594,6 +1189,7 @@ public class GameHandler : MonoBehaviour
                 levelActual = 3;
                 stageJuego = StageJuego.PreJuego;
                 setCarLevelPosition();
+                setCar2PositionLevelInit();
             }
 
             if (pressed(KeyCode.Alpha4) || pressed(KeyCode.Keypad4))
@@ -601,6 +1197,7 @@ public class GameHandler : MonoBehaviour
                 levelActual = 4;
                 stageJuego = StageJuego.PreJuego;
                 setCarLevelPosition();
+                setCar2PositionLevelInit();
             }
 
             if (pressed(KeyCode.Alpha5) || pressed(KeyCode.Keypad5))
@@ -608,6 +1205,7 @@ public class GameHandler : MonoBehaviour
                 levelActual = 5;
                 stageJuego = StageJuego.PreJuego;
                 setCarLevelPosition();
+                setCar2PositionLevelInit();
             }
         }
 
@@ -663,6 +1261,137 @@ public class GameHandler : MonoBehaviour
             }
         }
 
+//MARK: - Multijugador KEYS
+        void selectCarsMulti()
+        {
+            void previousCar1()
+            {
+                switch (cocheElegido)
+                {
+                    case CocheElegido.Uno:
+                        cocheElegido = CocheElegido.Cuatro;
+                        break;
+                    case CocheElegido.Dos:
+                        cocheElegido = CocheElegido.Uno;
+                        break;
+                    case CocheElegido.Tres:
+                        cocheElegido = CocheElegido.Dos;
+                        break;
+                    case CocheElegido.Cuatro:
+                        cocheElegido = CocheElegido.Tres;
+                        break;
+                }  
+            }
+
+            void nextCar1()
+            {
+                switch (cocheElegido)
+                {
+                    case CocheElegido.Uno:
+                        cocheElegido = CocheElegido.Dos;
+                        break;
+                    case CocheElegido.Dos:
+                        cocheElegido = CocheElegido.Tres;
+                        break;
+                    case CocheElegido.Tres:
+                        cocheElegido = CocheElegido.Cuatro;
+                        break;
+                    case CocheElegido.Cuatro:
+                        cocheElegido = CocheElegido.Uno;
+                        break;
+                }
+            }
+
+            void previousCar2()
+            {
+                switch (cocheElegido2)
+                {
+                    case CocheElegido.Uno:
+                        cocheElegido2 = CocheElegido.Cuatro;
+                        break;
+                    case CocheElegido.Dos:
+                        cocheElegido2 = CocheElegido.Uno;
+                        break;
+                    case CocheElegido.Tres:
+                        cocheElegido2 = CocheElegido.Dos;
+                        break;
+                    case CocheElegido.Cuatro:
+                        cocheElegido2 = CocheElegido.Tres;
+                        break;
+                }  
+            }
+
+            void nextCar2()
+            {
+                switch (cocheElegido2)
+                {
+                    case CocheElegido.Uno:
+                        cocheElegido2 = CocheElegido.Dos;
+                        break;
+                    case CocheElegido.Dos:
+                        cocheElegido2 = CocheElegido.Tres;
+                        break;
+                    case CocheElegido.Tres:
+                        cocheElegido2 = CocheElegido.Cuatro;
+                        break;
+                    case CocheElegido.Cuatro:
+                        cocheElegido2 = CocheElegido.Uno;
+                        break;
+                }
+            }
+
+            returnToMenu();
+
+            if (pressed(KeyCode.Q) && player1Confirm && player2Confirm)
+            {
+                tipoJuego = TipoJuego.Multijugador;
+                stageJuego = StageJuego.Seleccion;
+            }
+
+            if (pressed(KeyCode.S))
+            {
+                if (player1Confirm)
+                {
+                    player1Confirm = false;
+                } else
+                {
+                    player1Confirm = true;
+                }
+            }
+
+            if (pressed(KeyCode.DownArrow))
+            {
+                if (player2Confirm)
+                {
+                    player2Confirm = false;
+                } else
+                {
+                    player2Confirm = true;
+                }
+            }
+
+            if (pressed(KeyCode.A) && !player1Confirm)
+            {
+                previousCar1();
+            }
+
+            if (pressed(KeyCode.D) && !player1Confirm)
+            {
+                nextCar1();
+            }
+
+            if (pressed(KeyCode.LeftArrow) && !player2Confirm)
+            {
+                previousCar2();
+            }
+
+            if (pressed(KeyCode.RightArrow) && !player2Confirm)
+            {
+                nextCar2();
+            }
+
+        }
+
         globalKeys();
         switch (stageJuego)
         {
@@ -677,6 +1406,11 @@ public class GameHandler : MonoBehaviour
                 break;
             case StageJuego.SeleccionCoche:
                 selectionCarKeys();
+                break;
+
+            //Multijugador
+            case StageJuego.SeleccionCocheMulti:
+                selectCarsMulti();
                 break;
         }
 
@@ -714,9 +1448,6 @@ public class GameHandler : MonoBehaviour
                 stageJuego = StageJuego.PostJuego;
                 
             }
-
-     
-            
         }
     }
 
