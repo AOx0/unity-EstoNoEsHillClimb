@@ -11,12 +11,15 @@ public class showBestTimes : MonoBehaviour
     public Canvas bestLevel3Canvas;
     public Canvas bestLevel4Canvas;
     public Canvas bestLevel5Canvas;
+    public Canvas bestLevel6Canvas;
 
     public static float bestLevel1;
     public static float bestLevel2;
     public static float bestLevel3;
     public static float bestLevel4;
     public static float bestLevel5;
+    public static float bestLevel6;
+
 
     void Start()
     {
@@ -25,6 +28,7 @@ public class showBestTimes : MonoBehaviour
         bestLevel3 = 9999999;
         bestLevel4 = 9999999;
         bestLevel5 = 9999999;
+        bestLevel6 = 9999999;
     }
 
     
@@ -62,6 +66,7 @@ public class showBestTimes : MonoBehaviour
             ShowBestTime(bestLevel3, bestLevel3Canvas);
             ShowBestTime(bestLevel4, bestLevel4Canvas);
             ShowBestTime(bestLevel5, bestLevel5Canvas);
+            ShowBestTime(bestLevel5, bestLevel6Canvas);
         } else
         {
             bestLevel1Canvas.enabled = false;
@@ -69,6 +74,7 @@ public class showBestTimes : MonoBehaviour
             bestLevel3Canvas.enabled = false;
             bestLevel4Canvas.enabled = false;
             bestLevel5Canvas.enabled = false;
+            bestLevel6Canvas.enabled = false;
         }
         
     }

@@ -52,6 +52,8 @@ public class GameHandler : MonoBehaviour
     public static bool completedLvl3 = false;
     public static bool completedLvl4 = false;
     public static bool completedLvl5 = false;
+    public static bool completedLvl6 = false;
+
 
     public Canvas NewRecordCanvas;
 
@@ -469,16 +471,12 @@ public class GameHandler : MonoBehaviour
                 indicadorSpriteSolo.transform.rotation = Quaternion.Euler(Vector3.forward * (float)degrees);
             }
 
-        
+
+            print(movimiento);
+
             if (movimiento >= 0)
             {
-                if (movimiento * -0.2 >= -200)
-                {
-                    rotateBody((movimiento * -0.2));
-                } else
-                {
-                    rotateBody((movimiento * -0.0033) - (200));
-                }
+                rotateBody((movimiento * -0.1333333333));
             }
 
             if (movimiento < 0)
@@ -522,13 +520,7 @@ public class GameHandler : MonoBehaviour
         
             if (movimiento1 >= 0)
             {
-                if (movimiento1 * -0.2 >= -200)
-                {
-                    rotateBody((movimiento1 * -0.2));
-                } else
-                {
-                    rotateBody((movimiento1 * -0.0033) - (200));
-                }
+                rotateBody((movimiento1 * -0.1333333333));
             }
 
             if (movimiento1 < 0)
@@ -557,16 +549,10 @@ public class GameHandler : MonoBehaviour
                 indicadorSprite2.transform.rotation = Quaternion.Euler(Vector3.forward * (float)degrees);
             }
 
-        
+            
             if (movimiento2 >= 0)
             {
-                if (movimiento2 * -0.2 >= -200)
-                {
-                    rotateBody((movimiento2 * -0.2));
-                } else
-                {
-                    rotateBody((movimiento2 * -0.0033) - (200));
-                }
+                rotateBody((movimiento2 * -0.1333333333));
             }
 
             if (movimiento2 < 0)
@@ -719,6 +705,9 @@ public class GameHandler : MonoBehaviour
                         break;
                     case 4:
                         setCarPosition((float)0, (float)-55.3, proceso2Coche);
+                        break;
+                    case 6:
+                        setCarPosition((float)0, (float)-118, proceso2Coche);
                         break;
                 }
                 stageJuego = StageJuego.Juego;
@@ -1308,6 +1297,14 @@ public class GameHandler : MonoBehaviour
                 setCarLevelPosition();
                 setCar2PositionLevelInit();
             }
+
+            if (pressed(KeyCode.Alpha6) || pressed(KeyCode.Keypad6))
+            {
+                levelActual = 6;
+                stageJuego = StageJuego.PreJuego;
+                setCarLevelPosition();
+                setCar2PositionLevelInit();
+            }
         }
 
         void selectionCarKeys()
@@ -1502,7 +1499,8 @@ public class GameHandler : MonoBehaviour
         {
             if (pressed(KeyCode.C))
             {
-
+                setSpeedTo0(true);
+                setSpeedTo0(false);
                 terminoJugador2 = false;
                 terminoJugador1 = false;
 
@@ -1512,7 +1510,7 @@ public class GameHandler : MonoBehaviour
                 tiempoJugador2 = 0;
                 tiempoJugador1 = 0;
 
-                stageJuego = StageJuego.SeleccionCocheMulti;
+                stageJuego = StageJuego.Seleccion;
             }
         }
 
@@ -1570,6 +1568,9 @@ public class GameHandler : MonoBehaviour
                     case 5:
                         completedLvl5 = true;
                         break;
+                    case 6:
+                        completedLvl6 = true;
+                        break;
 
                 }
                 stageJuego = StageJuego.PostJuego;
@@ -1605,6 +1606,9 @@ public class GameHandler : MonoBehaviour
                     break;
                 case 4:
                     setCarPosition((float)0, (float)-55.3);
+                    break;
+                case 6:
+                    setCarPosition((float)0, (float)-118);
                     break;
             }
                 
@@ -1667,6 +1671,14 @@ public class GameHandler : MonoBehaviour
                         if (timeFloat < showBestTimes.bestLevel5)
                         {
                             showBestTimes.bestLevel5 = timeFloat;
+                            NewRecordCanvas.enabled = true;
+                        }
+                        break;
+                    case 6:
+
+                        if (timeFloat < showBestTimes.bestLevel6)
+                        {
+                            showBestTimes.bestLevel6 = timeFloat;
                             NewRecordCanvas.enabled = true;
                         }
                         break;

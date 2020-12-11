@@ -1,17 +1,22 @@
 ﻿<Properties StartupConfiguration="{5B9FF267-005F-A3BF-219E-FEAE2D8C894F}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BestTimes/showBestTimes.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameHandler.cs" Line="612" Column="19" />
-      <File FileName="Assets/Scripts/FinishView/FinishedView1.cs" />
-      <File FileName="Assets/Scripts/FinishView/FinishedView2.cs" />
-      <File FileName="Assets/Scripts/CameraFollow.cs" />
+      <File FileName="Assets/Scripts/GameHandler.cs" Line="710" Column="62" />
+      <File FileName="Assets/Scripts/CameraFollow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CompletedScripts/Level6Completed.cs" Line="16" Column="18" />
+      <File FileName="Assets/Scripts/CompletedScripts/Level4Complete.cs" Line="5" Column="1" />
+      <File FileName="Assets/Scripts/BestTimes/showBestTimes.cs" Line="20" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Project" expanded="True">
-            <Node name="Assets" expanded="True" selected="True">
-              <Node name="Scripts" expanded="True" />
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="BestTimes" expanded="True">
+                  <Node name="showBestTimes.cs" selected="True" />
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>

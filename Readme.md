@@ -2,20 +2,111 @@
 
 Project for the 2020 ITAM's **dinamITAM** programming / design challenge.
 
-El código está en su mayoría en inglés, al igual que el juego.
+Para correr el proyecto acceder a https://aox0.github.io/unity-EstoNoEsHillClimb/
 
 
 
-Para correr el proyecto en el navegador es necesario acceder a https://aox0.github.io/unity-EstoNoEsHillClimb/
+### Indice
+
+1.  [Features (juego)](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/Readme.md#features)
+
+2.  [El proyecto (código)](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/Readme.md#el-proyecto)
+3.  [El proceso de creación](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/Readme.md#el-proceso)
+
+
+
+# Features
+
+-   Menú de Inicio
+-   Musica
+    -   Posibilidad de habilitar / des habilitar la música
+-   Función de "spawn" de coches dependiendo del modo
+-   Función de actualización del velocimetro de cada jugador
+-   Función de actualización del indicador de posición en el recorrido
+-   Función de detección de tiempo en el aire para habilitar la rotación del coche para realizar acrobacias
+-   Stages  de juego para el control de los elementos
+    -   Menu
+    -   Seleccion de Coche
+    -   Seleccion multijugador de Coche
+    -   Seleccion de nivel
+    -   Pre juego (cargado)
+    -   Juego (a la escucha del Keyboard)
+    -   Postjuego (resultado y reinicio)
+-   Niveles del juego
+    -   5 niveles
+    -   Tutorial (1er Nivel)
+    -   Guardado de mejor tiempo en solitario
+    -   Indicador de nivel completado
+-   Elección de coche
+    -   Distintos tipos de coches
+        -   Normales
+        -   2x Speed (para acrobacias)
+    -   Conductas distintas dependiendo del tipo de coche
+        -   En velocidad máxima
+        -   En aceleración máxima y velocidad de aceleración
+-   Modo de juego solitario
+    -   Ayuda sugiriendo reiniciar el nivel si se detecta que el coche está con una rotación de casi -1 o 1 (volteado)
+    -   Seguimiento al jugador por parte de la cámara, fondo y UI.
+    -   Indicador de velocidad dinámico
+    -   "Minimapa": Indicador de posición en el track
+    -   Reaparición
+    -   Medición de tiempo
+    -   Mensaje de completado
+        -   Si fue o no mejor tiempo
+        -   El numero del nivel completado
+        -   El tiempo tomado para realizarlo
+-   Modo de juego multijugador
+    -   Elección por jugador del coche deseado
+    -   Elección de nivel
+    -   Reaparición para cada jugador
+    -   Seguimiento a cada jugador de
+        -   Camara individual
+        -   UI individual
+        -   Tracker (Indicador de posición en el recorrido) de los dos usuarios
+        -   Velocimetro
+    -   Velocimetro individual para cada jugador
+    -   Keys de acción distintas para cada jugador
+    -   Tracker de posición disponible para ambos jugadores
+    -   Tiempo total de ambos jugadores
+    -   Menú final con el jugador ganador y los tiempos
+-   
+-   Función de aceleración personalizada:
+    -   Si el usuario presiona un Key de acelerar el coche acelera
+    -   Si el usuario presiona un Key de reversa el coche
+        -   Si está acelerando o cuenta con velocidad la reduce un poco
+        -   Si no cuenta con velocidad va de reversa
+    -   Si el usuario no presiona nada se acelera/desacelera automáticamente poco a poco hasta llegar a 0
+    -   Si el usuario presiona un key de frenado el coche cambia a 0 de manera agresiva sin importar si va de reversa o acelerando
+-   Imagenes con una paleta de colores bastante oscura.
 
 
 
 # El proyecto
 
-Todo el proyecto se encuentra en la carpeta `Project`, si desean revisarlo solo clonen este repositorio y. agreguen dicha carpeta a Unity Hub.
+El código está en su mayoría en inglés, al igual que el juego. Todo el proyecto se encuentra en la carpeta `Project`, si desean revisarlo solo clonen este repositorio y agreguen dicha carpeta a Unity Hub.
 
-El código está ubicado en `Project/Assets/Scripts`. 
+Carpeta con todo el código en:  Project / Assets / [**Scripts**](https://github.com/AOx0/unity-EstoNoEsHillClimb/tree/master/Project/Assets/Scripts) /
 
 
 
 **Todo el código fue escrito por mi**, de igual forma **todo el material visual fue hecho por mi**. La música fue hecha por LitKidBeats, titulada "GOOD VIBES 2.0" está disponible en youtube y en su página litkidbeats.com.
+
+La estructura del código es simple. Se cuenta con un objeto principal encargado de realizar todos los procesos que requiere el juego `Game Handler` el cual funciona de manera 100% independiendte. Además del Handler principal se encuentran varios Scripts que se encargan de escuchar los atributos estáticos de la clase `GameHandler` y actualizar cierto elemento en la vista del usuario
+
+
+
+# El proceso
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen1.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen2.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen3.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen4.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen5.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen6.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen7.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen8.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen9.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen10.png)
+
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen11.png)
+
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/gif1.gif)
