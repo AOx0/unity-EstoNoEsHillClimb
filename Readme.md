@@ -4,6 +4,7 @@ Project for the 2020 ITAM's **dinamITAM** programming / design challenge.
 
 Para correr el proyecto acceder a https://aox0.github.io/unity-EstoNoEsHillClimb/
 
+**Cuando abran la página para jugarla pareciera que no está cargando, solo denle tiempo. No se ven los botones pero todo sigue ahí :v**
 
 
 ### Indice
