@@ -466,9 +466,11 @@ public class GameHandler : MonoBehaviour
     }
 
 
-// MARK: - Update UI
+// MARK: - Update UI 
     void UpdateIndicationsUI()
     {
+
+        // Updates the speed indication in solo mode
         void changeSpeedUIState()
         {
 
@@ -490,6 +492,7 @@ public class GameHandler : MonoBehaviour
             }
         }
 
+        // Updates the track indication in solo mode
         void updateTrackMinimap()
         {
             void setTrackerPosition(double x)
@@ -502,6 +505,7 @@ public class GameHandler : MonoBehaviour
             setTrackerPosition((-10 + (carPosition*9.85)/100));
         }
 
+        // Updates the time indication in solo mode
         void updateTimeText()
         {
             float time = Time.time - tiempoJugador1;
@@ -514,6 +518,7 @@ public class GameHandler : MonoBehaviour
 
         // Multijugador
 
+        // Updated the speed indication in multiplayer of the player 1
         void changeSpeedUIState1()
         {
 
@@ -533,6 +538,8 @@ public class GameHandler : MonoBehaviour
                 rotateBody((int)(movimiento1 * -0.04));
             }
         }
+
+        // Updated the time indication in multiplayer of the player 1
         void updateTimeText1()
         {
             if (!terminoJugador1  && stageJuego == StageJuego.Juego)
@@ -546,6 +553,7 @@ public class GameHandler : MonoBehaviour
 
         }
 
+        // Updated the speed indication in multiplayer of the player 2
         void changeSpeedUIState2()
         {
 
@@ -565,6 +573,8 @@ public class GameHandler : MonoBehaviour
                 rotateBody((int)(movimiento2 * -0.04));
             }
         }
+
+        // Updated the time indication in multiplayer of the player 2
         void updateTimeText2()
         {
             if (!terminoJugador2 && stageJuego == StageJuego.Juego)
@@ -578,6 +588,7 @@ public class GameHandler : MonoBehaviour
 
         }
 
+        // Updated the track indication in multiplayer
        void updateTrackMinimapMulti()
        {
             void setTracker1Position(double x)
@@ -651,6 +662,7 @@ public class GameHandler : MonoBehaviour
 
     // MARK: - Car Methods
 
+        // Analize if the hint of restarting the level appears
         void tipToRestart()
         {
             if (cocheActualElegido.transform.rotation.z < -0.75 || cocheActualElegido.transform.rotation.z > 0.75)
@@ -662,6 +674,7 @@ public class GameHandler : MonoBehaviour
             }   
         }
 
+        // Sets the actual selected and used car in the specific coords
         void setCarPosition(double x, double y, bool procesoCoche2 = false)
         {
             if (!procesoCoche2)
@@ -677,6 +690,7 @@ public class GameHandler : MonoBehaviour
             
         }
 
+        // Depending of the level "spawns" the user cars in the starting position of the track
         void setCarLevelPosition(bool restart = false, bool proceso2Coche = false)
         {
             if (stageJuego == StageJuego.PreJuego || restart == true) {
@@ -725,6 +739,7 @@ public class GameHandler : MonoBehaviour
             WheelJoint2D rueda1 = coche.gameObject.transform.GetChild(0).gameObject.GetComponent<WheelJoint2D>();
             WheelJoint2D rueda2 = coche.gameObject.transform.GetChild(1).gameObject.GetComponent<WheelJoint2D>();
 
+            // Handles the forward/backwards movements of the car of the player in single mode
             void singleVerticalMovement()
             {
                 float movimientoAntes = movimiento;
@@ -785,6 +800,8 @@ public class GameHandler : MonoBehaviour
                 rueda1.motor = new JointMotor2D { motorSpeed = movimiento , maxMotorTorque = 10000 };
                 
             }
+
+            // Handles the breaks of the car used in single mode
             void singleHorizontalMovement()
             {
                 float speed = Input.GetAxisRaw("Vertical");
@@ -813,6 +830,7 @@ public class GameHandler : MonoBehaviour
                 }
             }
 
+            // Handles the forward/backwards movements of the car of the player 1
             void mutliVerticalMovement1()
             {
 
@@ -874,6 +892,8 @@ public class GameHandler : MonoBehaviour
                 rueda1.motor = new JointMotor2D { motorSpeed = movimiento1 , maxMotorTorque = 10000 };
                 
             }
+
+            // Handles the break of the car of the player 1
             void mutliHorizontalMovement1()
             {
                 float speed = breakCar1;
@@ -902,6 +922,7 @@ public class GameHandler : MonoBehaviour
                 }
             }
 
+            // Handles the forward/backwards movements of the car of the player 2
             void mutliVerticalMovement2()
             {
 
@@ -963,6 +984,8 @@ public class GameHandler : MonoBehaviour
                 rueda1.motor = new JointMotor2D { motorSpeed = movimiento2 , maxMotorTorque = 10000 };
                 
             }
+
+            // Handles the break of the car of the player 2
             void mutliHorizontalMovement2()
             {
                 float speed = breakCar2;
@@ -1010,6 +1033,7 @@ public class GameHandler : MonoBehaviour
             
         }
 
+        // Function called at every init of the gameplay, when a level is restarted or finished that sets the target car speed to 0
         void setSpeedTo0(bool jugador1 = true)
         {
             if (jugador1)
@@ -1037,6 +1061,8 @@ public class GameHandler : MonoBehaviour
             
         }
 
+
+        // Function that moves an RigidBody2D object to the specified coordinate.
         void setSpecifiedCarPosition(Rigidbody2D coche, double x, double y, bool acciones2 = false)
         {
             if (!acciones2)
@@ -1051,17 +1077,19 @@ public class GameHandler : MonoBehaviour
             
         }
 
+
+        // Function that moves all cars to a position far from the level. It "guards" them
         void parkAllCars()
         {
-            setSpecifiedCarPosition(coche1,-31.7,51.5 );
-            setSpecifiedCarPosition(coche2,-26.28,51.5 );
-            setSpecifiedCarPosition(coche3,-26.28,51.5 );
-            setSpecifiedCarPosition(coche4,-19.95,51.5 );
+            setSpecifiedCarPosition(coche1,-31.7,55 );
+            setSpecifiedCarPosition(coche2,-26.28,55 );
+            setSpecifiedCarPosition(coche3,-26.28,55 );
+            setSpecifiedCarPosition(coche4,-19.95,55 );
 
-            setSpecifiedCarPosition(coche1_2,-31.7,51.5, true);
-            setSpecifiedCarPosition(coche2_2,-26.28,51.5, true);
-            setSpecifiedCarPosition(coche3_2,-26.28,51.5, true);
-            setSpecifiedCarPosition(coche4_2,-19.95,51.5, true);
+            setSpecifiedCarPosition(coche1_2,-31.7,55, true);
+            setSpecifiedCarPosition(coche2_2,-26.28,55, true);
+            setSpecifiedCarPosition(coche3_2,-26.28,55, true);
+            setSpecifiedCarPosition(coche4_2,-19.95,55, true);
         }
 
         bool pressed(KeyCode key)
@@ -1176,6 +1204,7 @@ public class GameHandler : MonoBehaviour
                 if (tipoJuego == TipoJuego.Single)
                 {
                     setSpeedTo0();
+
                     setCarLevelPosition(true, false);
                 } else
                 {
@@ -1231,6 +1260,7 @@ public class GameHandler : MonoBehaviour
         {
             if (pressed(KeyCode.R))
             {
+                parkAllCars();
                 if (tipoJuego == TipoJuego.Multijugador)
                 {
                     tipoJuego = TipoJuego.Single;
