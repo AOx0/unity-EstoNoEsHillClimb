@@ -58,6 +58,7 @@
 		<type fullname="Level3Complete" preserve="nothing"/>
 		<type fullname="Level4Complete" preserve="nothing"/>
 		<type fullname="Level5Complete" preserve="nothing"/>
+		<type fullname="Level6Completed" preserve="nothing"/>
 		<type fullname="ShowMusic" preserve="nothing"/>
 		<type fullname="multiSelection" preserve="nothing"/>
 		<type fullname="showBestTimes" preserve="nothing"/>

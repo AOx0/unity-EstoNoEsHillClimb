@@ -28,10 +28,10 @@ extern void showBestTimes_ShowBestTime_m7F708EE6E018B71076C1D28934F7BCD0AC45F91D
 extern void showBestTimes_Update_mD30B14BEEE94578EC75FDF07ADF0E78BB9BC846D (void);
 // 0x00000004 System.Void showBestTimes::.ctor()
 extern void showBestTimes__ctor_mB3312A9C6F9192CF40BFD2127310AB62400B3C23 (void);
-// 0x00000005 System.String showBestTimes::<ShowBestTime>g__formatedStingU7C11_0(System.Single)
-extern void showBestTimes_U3CShowBestTimeU3Eg__formatedStingU7C11_0_m565A96186A62E39C4A3327ED23363BC852BE3EAF (void);
-// 0x00000006 System.Void showBestTimes::<ShowBestTime>g__showInCanvasU7C11_1(UnityEngine.Canvas,System.String)
-extern void showBestTimes_U3CShowBestTimeU3Eg__showInCanvasU7C11_1_m48E85F450FB1B8B5B744A580F5003C752AEB16F9 (void);
+// 0x00000005 System.String showBestTimes::<ShowBestTime>g__formatedStingU7C13_0(System.Single)
+extern void showBestTimes_U3CShowBestTimeU3Eg__formatedStingU7C13_0_m2C007D7BFF5C7CFCFDA2AB91FEC86D10E735E841 (void);
+// 0x00000006 System.Void showBestTimes::<ShowBestTime>g__showInCanvasU7C13_1(UnityEngine.Canvas,System.String)
+extern void showBestTimes_U3CShowBestTimeU3Eg__showInCanvasU7C13_1_m2B8265131270B2228B280CB35123DAA7C30D60AF (void);
 // 0x00000007 System.Void CameraFollow::Start()
 extern void CameraFollow_Start_mA9B0BF6D65FDE2EC07572180BF67C67F711C1C8C (void);
 // 0x00000008 System.Void CameraFollow::Update()
@@ -92,202 +92,208 @@ extern void Level5Complete_Start_m6AFBB29EB306D719C85AFC2034BE2738D3CED8BE (void
 extern void Level5Complete_Update_m3D5CD63D388C58A410AA89AF9B87DB31236A0F04 (void);
 // 0x00000024 System.Void Level5Complete::.ctor()
 extern void Level5Complete__ctor_mB4056C7CBCE415071D5182921DD48418C1B27C0A (void);
-// 0x00000025 System.Void FinishedView1::Start()
+// 0x00000025 System.Void Level6Completed::Start()
+extern void Level6Completed_Start_m895CAD5FACCA0E1CD6953AAFCE6C3ABA65433DBB (void);
+// 0x00000026 System.Void Level6Completed::Update()
+extern void Level6Completed_Update_mAD0345F9295A8D5D28457F55AF9D4A286D166140 (void);
+// 0x00000027 System.Void Level6Completed::.ctor()
+extern void Level6Completed__ctor_mE3502B7E48AF2DE7274692FC71F6CDDAB624575D (void);
+// 0x00000028 System.Void FinishedView1::Start()
 extern void FinishedView1_Start_m7D04DBB1FB1A29222B4D5A3BABC45652C647EE41 (void);
-// 0x00000026 System.Void FinishedView1::Update()
+// 0x00000029 System.Void FinishedView1::Update()
 extern void FinishedView1_Update_m5630CC2439BE8D9B70334CBE633CBDE70AB8C293 (void);
-// 0x00000027 System.Void FinishedView1::.ctor()
+// 0x0000002A System.Void FinishedView1::.ctor()
 extern void FinishedView1__ctor_m0B78CD6A9FF47C702C6C935B442421AD8044CC45 (void);
-// 0x00000028 System.Void FinishedView2::Start()
+// 0x0000002B System.Void FinishedView2::Start()
 extern void FinishedView2_Start_m3F0BBDE85418CE4C7F0D4535A523CF23FDFFDB55 (void);
-// 0x00000029 System.Void FinishedView2::Update()
+// 0x0000002C System.Void FinishedView2::Update()
 extern void FinishedView2_Update_mE0929E18065FAD3855BBA853072C2E67D9E9395C (void);
-// 0x0000002A System.Void FinishedView2::.ctor()
+// 0x0000002D System.Void FinishedView2::.ctor()
 extern void FinishedView2__ctor_mB156933E1E6B7F673911E50D178646AB583123A5 (void);
-// 0x0000002B System.Boolean GameHandler::get_Coche1EnAire()
+// 0x0000002E System.Boolean GameHandler::get_Coche1EnAire()
 extern void GameHandler_get_Coche1EnAire_m965A0874C9CEE16C68254CB2EDE89B10F351EA7B (void);
-// 0x0000002C System.Void GameHandler::set_Coche1EnAire(System.Boolean)
+// 0x0000002F System.Void GameHandler::set_Coche1EnAire(System.Boolean)
 extern void GameHandler_set_Coche1EnAire_m86467974E97353380B9707B95246191E39FDA7AD (void);
-// 0x0000002D System.Boolean GameHandler::get_Coche2EnAire()
+// 0x00000030 System.Boolean GameHandler::get_Coche2EnAire()
 extern void GameHandler_get_Coche2EnAire_m01EB99B3267622BC9A605682AA7C46E078431FC2 (void);
-// 0x0000002E System.Void GameHandler::set_Coche2EnAire(System.Boolean)
+// 0x00000031 System.Void GameHandler::set_Coche2EnAire(System.Boolean)
 extern void GameHandler_set_Coche2EnAire_mB4F62684436145323DD8DC93576C3A155577C93D (void);
-// 0x0000002F System.Void GameHandler::Start()
+// 0x00000032 System.Void GameHandler::Start()
 extern void GameHandler_Start_mA6B535E36049C17BD2ABEC66F479F2F4F32D65E9 (void);
-// 0x00000030 System.Void GameHandler::Update()
+// 0x00000033 System.Void GameHandler::Update()
 extern void GameHandler_Update_m441ED700AF2A920F48C5CC72A2037E6309191C47 (void);
-// 0x00000031 System.Void GameHandler::ShowInCanvas(UnityEngine.Canvas,System.String)
+// 0x00000034 System.Void GameHandler::ShowInCanvas(UnityEngine.Canvas,System.String)
 extern void GameHandler_ShowInCanvas_m61930C6EF173AC10DDEFFF791607832FB5AE897E (void);
-// 0x00000032 UnityEngine.Rigidbody2D GameHandler::CocheElegidoActual(System.Boolean)
+// 0x00000035 UnityEngine.Rigidbody2D GameHandler::CocheElegidoActual(System.Boolean)
 extern void GameHandler_CocheElegidoActual_m79FBB521A7A9172A6914F696D8B94644351B10EE (void);
-// 0x00000033 System.Void GameHandler::CameraFollow()
+// 0x00000036 System.Void GameHandler::CameraFollow()
 extern void GameHandler_CameraFollow_m0758927205EE72D6D853DD758A26DBE2A10D8756 (void);
-// 0x00000034 System.Void GameHandler::UpdateIndicationsUI()
+// 0x00000037 System.Void GameHandler::UpdateIndicationsUI()
 extern void GameHandler_UpdateIndicationsUI_m3F5011ECBB85228D20FB1B65E5EAE3A5BE27B2BB (void);
-// 0x00000035 System.Void GameHandler::KeyHandler()
+// 0x00000038 System.Void GameHandler::KeyHandler()
 extern void GameHandler_KeyHandler_m392298CC53722FAFEC4ED1A3BDC94E06B1E986B3 (void);
-// 0x00000036 System.Void GameHandler::CheckIfUserWin()
+// 0x00000039 System.Void GameHandler::CheckIfUserWin()
 extern void GameHandler_CheckIfUserWin_m51A2F33E691AC3612B5EA1AB8537D3CF4D9EB73B (void);
-// 0x00000037 System.Void GameHandler::ShowWinMessage()
+// 0x0000003A System.Void GameHandler::ShowWinMessage()
 extern void GameHandler_ShowWinMessage_mD1A740F5C4643B25EC87D3F667A050C56F983F64 (void);
-// 0x00000038 System.Void GameHandler::MultiplayerWinHandler()
+// 0x0000003B System.Void GameHandler::MultiplayerWinHandler()
 extern void GameHandler_MultiplayerWinHandler_m05FFA8DE12F9DFAAEA5DFDA8D59F11D631AA0DD8 (void);
-// 0x00000039 System.Void GameHandler::.ctor()
+// 0x0000003C System.Void GameHandler::.ctor()
 extern void GameHandler__ctor_mE32FBA1F1F711E44C2A042C09C7CE357937EF18B (void);
-// 0x0000003A System.Void GameHandler::.cctor()
+// 0x0000003D System.Void GameHandler::.cctor()
 extern void GameHandler__cctor_mD7059E7D0F072ADF90F483223ADAD32756F541A7 (void);
-// 0x0000003B UnityEngine.Vector3 GameHandler::<CameraFollow>g__makeVectorU7C85_0(System.Double,System.Double,System.Boolean)
-extern void GameHandler_U3CCameraFollowU3Eg__makeVectorU7C85_0_m213909A9547EF4DAFB12F2740A3141E2D00899E1 (void);
-// 0x0000003C System.Void GameHandler::<CameraFollow>g__gameViewU7C85_1()
-extern void GameHandler_U3CCameraFollowU3Eg__gameViewU7C85_1_m6ADFCDD09F2BEC11D5663243293F5FE8CB8D18EB (void);
-// 0x0000003D System.Void GameHandler::<CameraFollow>g__IMP_fix2DCarPositionInLevelsU7C85_7(System.Int32,System.Double)
-extern void GameHandler_U3CCameraFollowU3Eg__IMP_fix2DCarPositionInLevelsU7C85_7_m5F84A75CF6973C1F49986583EFE7F99DA373ECFB (void);
-// 0x0000003E System.Void GameHandler::<CameraFollow>g__fix2DCarPositionInLevelsU7C85_8()
-extern void GameHandler_U3CCameraFollowU3Eg__fix2DCarPositionInLevelsU7C85_8_m87468AF21BC9F40615E1EE46B488FE0C8D17F1D6 (void);
-// 0x0000003F System.Void GameHandler::<CameraFollow>g__get2DCarPositionU7C85_9()
-extern void GameHandler_U3CCameraFollowU3Eg__get2DCarPositionU7C85_9_mB5AF26CBF1B49D8D4B3431127B2D27D1CB52DB9D (void);
-// 0x00000040 System.Void GameHandler::<CameraFollow>g__IMP_fix2DCarPositionInLevels2U7C85_10(System.Int32,System.Double)
-extern void GameHandler_U3CCameraFollowU3Eg__IMP_fix2DCarPositionInLevels2U7C85_10_m9E951790CBDAC70426B67E29F954D68FA759C470 (void);
-// 0x00000041 System.Void GameHandler::<CameraFollow>g__fix2DCarPositionInLevels2U7C85_11()
-extern void GameHandler_U3CCameraFollowU3Eg__fix2DCarPositionInLevels2U7C85_11_mFF79A72C363B1343D13DBD3BC519D056BD18296E (void);
-// 0x00000042 System.Void GameHandler::<CameraFollow>g__get2DCarPosition2U7C85_12()
-extern void GameHandler_U3CCameraFollowU3Eg__get2DCarPosition2U7C85_12_m73E8112D545D0BD93DAEBAEB3DC13DB2B98B6B89 (void);
-// 0x00000043 System.Void GameHandler::<CameraFollow>g__menuViewU7C85_2()
-extern void GameHandler_U3CCameraFollowU3Eg__menuViewU7C85_2_m001F1FEA47A76BEC85672BFADBA395E9926B562B (void);
-// 0x00000044 System.Void GameHandler::<CameraFollow>g__selectCarViewU7C85_3()
-extern void GameHandler_U3CCameraFollowU3Eg__selectCarViewU7C85_3_mC4DB29DEB1DAF84A4136E7A5FA74A182AC428322 (void);
-// 0x00000045 System.Void GameHandler::<CameraFollow>g__selectViewU7C85_4()
-extern void GameHandler_U3CCameraFollowU3Eg__selectViewU7C85_4_m368C29318FC52CAE9E0533E7A36876BDFE5BF248 (void);
-// 0x00000046 System.Void GameHandler::<CameraFollow>g__multi_selectViewU7C85_5()
-extern void GameHandler_U3CCameraFollowU3Eg__multi_selectViewU7C85_5_m025D906DF5877D2A9F1BEADDE8F4368B02EF67E7 (void);
-// 0x00000047 System.Void GameHandler::<CameraFollow>g__multiplayerLeaderBoardU7C85_6()
-extern void GameHandler_U3CCameraFollowU3Eg__multiplayerLeaderBoardU7C85_6_m6FFE563BE04108349D5363FC95893B32F7A5C891 (void);
-// 0x00000048 System.Void GameHandler::<UpdateIndicationsUI>g__changeSpeedUIStateU7C86_0()
-extern void GameHandler_U3CUpdateIndicationsUIU3Eg__changeSpeedUIStateU7C86_0_m6C00F388568545E4FD3FE1A0B75126726AB9D72B (void);
-// 0x00000049 System.Void GameHandler::<UpdateIndicationsUI>g__rotateBodyU7C86_8(System.Double)
-extern void GameHandler_U3CUpdateIndicationsUIU3Eg__rotateBodyU7C86_8_mE40481C7B9A60FA1A3764AAA49C830F6BD034CC8 (void);
-// 0x0000004A System.Void GameHandler::<UpdateIndicationsUI>g__updateTrackMinimapU7C86_1()
-extern void GameHandler_U3CUpdateIndicationsUIU3Eg__updateTrackMinimapU7C86_1_m7E0D1B06BAAEA35438EEA8DABC12B5328D1B6EEE (void);
-// 0x0000004B System.Void GameHandler::<UpdateIndicationsUI>g__setTrackerPositionU7C86_9(System.Double)
-extern void GameHandler_U3CUpdateIndicationsUIU3Eg__setTrackerPositionU7C86_9_m5406C46AA32098DC0E77587D96E05428CEB8D83C (void);
-// 0x0000004C System.Void GameHandler::<UpdateIndicationsUI>g__updateTimeTextU7C86_2()
-extern void GameHandler_U3CUpdateIndicationsUIU3Eg__updateTimeTextU7C86_2_m0C98D9DCF4F85CF06A5D27473A54A6FE5812F124 (void);
-// 0x0000004D System.Void GameHandler::<UpdateIndicationsUI>g__changeSpeedUIState1U7C86_3()
-extern void GameHandler_U3CUpdateIndicationsUIU3Eg__changeSpeedUIState1U7C86_3_m4F140431354B057271C3605A56C355D4DDA65798 (void);
-// 0x0000004E System.Void GameHandler::<UpdateIndicationsUI>g__rotateBodyU7C86_10(System.Double)
-extern void GameHandler_U3CUpdateIndicationsUIU3Eg__rotateBodyU7C86_10_m8A5A0C756CAAB30230BAA6D8BAEB0ECC35B3C681 (void);
-// 0x0000004F System.Void GameHandler::<UpdateIndicationsUI>g__updateTimeText1U7C86_4()
-extern void GameHandler_U3CUpdateIndicationsUIU3Eg__updateTimeText1U7C86_4_m8BDEEB56481918242C8C0A78559B1A502B080940 (void);
-// 0x00000050 System.Void GameHandler::<UpdateIndicationsUI>g__changeSpeedUIState2U7C86_5()
-extern void GameHandler_U3CUpdateIndicationsUIU3Eg__changeSpeedUIState2U7C86_5_m10A29234A1F8CEB334A7FDB15A3100EE3822FFBD (void);
-// 0x00000051 System.Void GameHandler::<UpdateIndicationsUI>g__rotateBodyU7C86_11(System.Double)
-extern void GameHandler_U3CUpdateIndicationsUIU3Eg__rotateBodyU7C86_11_m733ACCF0CC68A414709819C3D8D3467931117B08 (void);
-// 0x00000052 System.Void GameHandler::<UpdateIndicationsUI>g__updateTimeText2U7C86_6()
-extern void GameHandler_U3CUpdateIndicationsUIU3Eg__updateTimeText2U7C86_6_mC2029030FD229B6FB19CE71869EDAD712813A518 (void);
-// 0x00000053 System.Void GameHandler::<UpdateIndicationsUI>g__updateTrackMinimapMultiU7C86_7()
-extern void GameHandler_U3CUpdateIndicationsUIU3Eg__updateTrackMinimapMultiU7C86_7_mE415EECA222DB0109477A4968B953E82129CD6C9 (void);
-// 0x00000054 System.Void GameHandler::<UpdateIndicationsUI>g__setTracker1PositionU7C86_12(System.Double)
-extern void GameHandler_U3CUpdateIndicationsUIU3Eg__setTracker1PositionU7C86_12_m9C07A0F96D305C6021A5FF5EB31DF949D701570A (void);
-// 0x00000055 System.Void GameHandler::<UpdateIndicationsUI>g__setTracker2PositionU7C86_13(System.Double)
-extern void GameHandler_U3CUpdateIndicationsUIU3Eg__setTracker2PositionU7C86_13_m01A749EE004E9546DAA96F09AA46FDECCF558AEB (void);
-// 0x00000056 System.Void GameHandler::<KeyHandler>g__tipToRestartU7C87_0()
-extern void GameHandler_U3CKeyHandlerU3Eg__tipToRestartU7C87_0_m5C0B12F21C337DBC894033F7A4389BA6C76F12D4 (void);
-// 0x00000057 System.Void GameHandler::<KeyHandler>g__setCarPositionU7C87_1(System.Double,System.Double,System.Boolean)
-extern void GameHandler_U3CKeyHandlerU3Eg__setCarPositionU7C87_1_m3E9262D38EC259E7CA74A429601F0CD13553D80B (void);
-// 0x00000058 System.Void GameHandler::<KeyHandler>g__setCarLevelPositionU7C87_2(System.Boolean,System.Boolean)
-extern void GameHandler_U3CKeyHandlerU3Eg__setCarLevelPositionU7C87_2_mDE3B540A26E3A038B192E42C404E09D550F30A1D (void);
-// 0x00000059 System.Void GameHandler::<KeyHandler>g__carMovementU7C87_3(UnityEngine.Rigidbody2D,System.Int32)
-extern void GameHandler_U3CKeyHandlerU3Eg__carMovementU7C87_3_m888E5D0A46ED5F71ED0BA2AC4060031158EACED7 (void);
-// 0x0000005A System.Void GameHandler::<KeyHandler>g__singleVerticalMovementU7C87_16(GameHandler_<>c__DisplayClass87_0&)
-extern void GameHandler_U3CKeyHandlerU3Eg__singleVerticalMovementU7C87_16_mE29296CE539B283A40F4FB508B6595B4152CE1F6 (void);
-// 0x0000005B System.Void GameHandler::<KeyHandler>g__singleHorizontalMovementU7C87_17(GameHandler_<>c__DisplayClass87_0&)
-extern void GameHandler_U3CKeyHandlerU3Eg__singleHorizontalMovementU7C87_17_mD219860EE15066CB1B29B91F9666B90AE3625BBA (void);
-// 0x0000005C System.Void GameHandler::<KeyHandler>g__mutliVerticalMovement1U7C87_18(GameHandler_<>c__DisplayClass87_0&)
-extern void GameHandler_U3CKeyHandlerU3Eg__mutliVerticalMovement1U7C87_18_m0DE5475908AE4C15F8FA410564D3D5A08095A110 (void);
-// 0x0000005D System.Void GameHandler::<KeyHandler>g__mutliHorizontalMovement1U7C87_19(GameHandler_<>c__DisplayClass87_0&)
-extern void GameHandler_U3CKeyHandlerU3Eg__mutliHorizontalMovement1U7C87_19_mA9D72A0FD09088D136A970374A9FCC830BECBA13 (void);
-// 0x0000005E System.Void GameHandler::<KeyHandler>g__mutliVerticalMovement2U7C87_20(GameHandler_<>c__DisplayClass87_0&)
-extern void GameHandler_U3CKeyHandlerU3Eg__mutliVerticalMovement2U7C87_20_mE99DE231D06D100BFC92F19245172F8B7CC67EF5 (void);
-// 0x0000005F System.Void GameHandler::<KeyHandler>g__mutliHorizontalMovement2U7C87_21(GameHandler_<>c__DisplayClass87_0&)
-extern void GameHandler_U3CKeyHandlerU3Eg__mutliHorizontalMovement2U7C87_21_m3B5025D69BD73D26ED75037FA849309DC92E21E1 (void);
-// 0x00000060 System.Void GameHandler::<KeyHandler>g__setSpeedTo0U7C87_4(System.Boolean)
-extern void GameHandler_U3CKeyHandlerU3Eg__setSpeedTo0U7C87_4_m006DE720F8C86D300EDBBCB4F82E3BD5D5233222 (void);
-// 0x00000061 System.Void GameHandler::<KeyHandler>g__setSpecifiedCarPositionU7C87_5(UnityEngine.Rigidbody2D,System.Double,System.Double,System.Boolean)
-extern void GameHandler_U3CKeyHandlerU3Eg__setSpecifiedCarPositionU7C87_5_m97B11C42A9B970826CFC52EBA8502E534BD26118 (void);
-// 0x00000062 System.Void GameHandler::<KeyHandler>g__parkAllCarsU7C87_6()
-extern void GameHandler_U3CKeyHandlerU3Eg__parkAllCarsU7C87_6_m60E1284DB26ADF667CD96633AE62E8C1534735EF (void);
-// 0x00000063 System.Boolean GameHandler::<KeyHandler>g__pressedU7C87_7(UnityEngine.KeyCode)
-extern void GameHandler_U3CKeyHandlerU3Eg__pressedU7C87_7_m3DEDBB8D8A5681F16DA218138C97C01CAD6660EC (void);
-// 0x00000064 System.Void GameHandler::<KeyHandler>g__returnToMenuU7C87_8()
-extern void GameHandler_U3CKeyHandlerU3Eg__returnToMenuU7C87_8_m076E63F95EEB03F474C7FFB426B9B194BD2129E6 (void);
-// 0x00000065 System.Void GameHandler::<KeyHandler>g__gameKeysU7C87_9()
-extern void GameHandler_U3CKeyHandlerU3Eg__gameKeysU7C87_9_m8107DFB91C35071B764590026B76030B69930B9B (void);
-// 0x00000066 System.Void GameHandler::<KeyHandler>g__menuKeysU7C87_10()
-extern void GameHandler_U3CKeyHandlerU3Eg__menuKeysU7C87_10_mCFC576F6AB78B8845E11BA81ACE04440BF87AB55 (void);
-// 0x00000067 System.Void GameHandler::<KeyHandler>g__selectionLvlKeysU7C87_11()
-extern void GameHandler_U3CKeyHandlerU3Eg__selectionLvlKeysU7C87_11_mB088E330B7A1CA340325E81E905D57A3E2E595CA (void);
-// 0x00000068 System.Void GameHandler::<KeyHandler>g__setCar2PositionLevelInitU7C87_22()
-extern void GameHandler_U3CKeyHandlerU3Eg__setCar2PositionLevelInitU7C87_22_m12D2F1261DD782F20CAACFD7C187E41D64C39CDA (void);
-// 0x00000069 System.Void GameHandler::<KeyHandler>g__selectionCarKeysU7C87_12()
-extern void GameHandler_U3CKeyHandlerU3Eg__selectionCarKeysU7C87_12_m2CB07761C87B9575B6DA171C5E2CAA5179AE59CA (void);
-// 0x0000006A System.Void GameHandler::<KeyHandler>g__globalKeysU7C87_13()
-extern void GameHandler_U3CKeyHandlerU3Eg__globalKeysU7C87_13_mBCD8DD6AF6A98E40A7F7F15351FE924D57A733CA (void);
-// 0x0000006B System.Void GameHandler::<KeyHandler>g__selectCarsMultiU7C87_14()
-extern void GameHandler_U3CKeyHandlerU3Eg__selectCarsMultiU7C87_14_mCDBD81A7D1E349544F88E00A597AA66B3D914AC7 (void);
-// 0x0000006C System.Void GameHandler::<KeyHandler>g__previousCar1U7C87_23()
-extern void GameHandler_U3CKeyHandlerU3Eg__previousCar1U7C87_23_mFDF159A532EC81507B329C61207C7853D1B2B812 (void);
-// 0x0000006D System.Void GameHandler::<KeyHandler>g__nextCar1U7C87_24()
-extern void GameHandler_U3CKeyHandlerU3Eg__nextCar1U7C87_24_m4D0D3855C78EB437664EE049241AC2E03BEFA535 (void);
-// 0x0000006E System.Void GameHandler::<KeyHandler>g__previousCar2U7C87_25()
-extern void GameHandler_U3CKeyHandlerU3Eg__previousCar2U7C87_25_mADC59E6D3AB8CA19C193BC817FCC8046BBC4ED80 (void);
-// 0x0000006F System.Void GameHandler::<KeyHandler>g__nextCar2U7C87_26()
-extern void GameHandler_U3CKeyHandlerU3Eg__nextCar2U7C87_26_m3BA6FEDE0FC346B0EE971779DF358231040E2675 (void);
-// 0x00000070 System.Void GameHandler::<KeyHandler>g__leaderboardU7C87_15()
-extern void GameHandler_U3CKeyHandlerU3Eg__leaderboardU7C87_15_m8F3379B494FB009686CD4DDA79D68C9CBD645BC4 (void);
-// 0x00000071 System.Void GameHandler::<ShowWinMessage>g__setCarPositionU7C89_0(System.Double,System.Double)
-extern void GameHandler_U3CShowWinMessageU3Eg__setCarPositionU7C89_0_m2CB3C046FB100B9CD3FDFB6A6282F7F97B882F58 (void);
-// 0x00000072 System.Void GameHandler::<ShowWinMessage>g__setCarLevelPositionU7C89_1()
-extern void GameHandler_U3CShowWinMessageU3Eg__setCarLevelPositionU7C89_1_m2FF9BA3ADE5C665474CCFB1E7BE51B5E24B9E416 (void);
-// 0x00000073 System.Void GameHandler::<MultiplayerWinHandler>g__setSpecifiedCarPositionU7C90_0(UnityEngine.Rigidbody2D,System.Double,System.Double)
-extern void GameHandler_U3CMultiplayerWinHandlerU3Eg__setSpecifiedCarPositionU7C90_0_m5069DCF2964F25842911733EAF347BEE8F5C8B03 (void);
-// 0x00000074 System.Void MenuControl::Start()
+// 0x0000003E UnityEngine.Vector3 GameHandler::<CameraFollow>g__makeVectorU7C86_0(System.Double,System.Double,System.Boolean)
+extern void GameHandler_U3CCameraFollowU3Eg__makeVectorU7C86_0_m43A850FDC0705F209B2844A3A6143185D3D9DBDD (void);
+// 0x0000003F System.Void GameHandler::<CameraFollow>g__gameViewU7C86_1()
+extern void GameHandler_U3CCameraFollowU3Eg__gameViewU7C86_1_m980CC21C80A19D63A0123292B95EABB011722182 (void);
+// 0x00000040 System.Void GameHandler::<CameraFollow>g__IMP_fix2DCarPositionInLevelsU7C86_7(System.Int32,System.Double)
+extern void GameHandler_U3CCameraFollowU3Eg__IMP_fix2DCarPositionInLevelsU7C86_7_m1A26EC340603B5D32B40E27F32EEEAD2C4A7EE7C (void);
+// 0x00000041 System.Void GameHandler::<CameraFollow>g__fix2DCarPositionInLevelsU7C86_8()
+extern void GameHandler_U3CCameraFollowU3Eg__fix2DCarPositionInLevelsU7C86_8_m6AD18C303E6A7EA12643791B0A094AD88516221C (void);
+// 0x00000042 System.Void GameHandler::<CameraFollow>g__get2DCarPositionU7C86_9()
+extern void GameHandler_U3CCameraFollowU3Eg__get2DCarPositionU7C86_9_m58C70784CCA3359B9922A85173A26C88B2B54514 (void);
+// 0x00000043 System.Void GameHandler::<CameraFollow>g__IMP_fix2DCarPositionInLevels2U7C86_10(System.Int32,System.Double)
+extern void GameHandler_U3CCameraFollowU3Eg__IMP_fix2DCarPositionInLevels2U7C86_10_mBB0EF61F1BD6F2BE8DAB7E3BEF12C7008B36933B (void);
+// 0x00000044 System.Void GameHandler::<CameraFollow>g__fix2DCarPositionInLevels2U7C86_11()
+extern void GameHandler_U3CCameraFollowU3Eg__fix2DCarPositionInLevels2U7C86_11_m49B6A6736CCCB0CDF35C114C8BABC048D4DD7C32 (void);
+// 0x00000045 System.Void GameHandler::<CameraFollow>g__get2DCarPosition2U7C86_12()
+extern void GameHandler_U3CCameraFollowU3Eg__get2DCarPosition2U7C86_12_mF35EC664E05BCA65892C8FB7CFA17D40A45CD340 (void);
+// 0x00000046 System.Void GameHandler::<CameraFollow>g__menuViewU7C86_2()
+extern void GameHandler_U3CCameraFollowU3Eg__menuViewU7C86_2_mEDCFF3125E44D723DE5BC5D6537A751C110DD00F (void);
+// 0x00000047 System.Void GameHandler::<CameraFollow>g__selectCarViewU7C86_3()
+extern void GameHandler_U3CCameraFollowU3Eg__selectCarViewU7C86_3_m41DC575A1BDED64C100B5D4CE2004A412B831121 (void);
+// 0x00000048 System.Void GameHandler::<CameraFollow>g__selectViewU7C86_4()
+extern void GameHandler_U3CCameraFollowU3Eg__selectViewU7C86_4_mD4AE94A8F5A89FE81FFEAA5DF29E22CD403A73C4 (void);
+// 0x00000049 System.Void GameHandler::<CameraFollow>g__multi_selectViewU7C86_5()
+extern void GameHandler_U3CCameraFollowU3Eg__multi_selectViewU7C86_5_m26D6C0758D04D6D93CD4740F1BCCD33D8440DB7E (void);
+// 0x0000004A System.Void GameHandler::<CameraFollow>g__multiplayerLeaderBoardU7C86_6()
+extern void GameHandler_U3CCameraFollowU3Eg__multiplayerLeaderBoardU7C86_6_m569BEFC6C247028A8FA4E7722CACDAF737CE0CAD (void);
+// 0x0000004B System.Void GameHandler::<UpdateIndicationsUI>g__changeSpeedUIStateU7C87_0()
+extern void GameHandler_U3CUpdateIndicationsUIU3Eg__changeSpeedUIStateU7C87_0_mD493D52B82B3498B5064175755AAC4361A5799C4 (void);
+// 0x0000004C System.Void GameHandler::<UpdateIndicationsUI>g__rotateBodyU7C87_8(System.Double)
+extern void GameHandler_U3CUpdateIndicationsUIU3Eg__rotateBodyU7C87_8_mAF166CC26C47D0E2926E98773E223D7EBC294725 (void);
+// 0x0000004D System.Void GameHandler::<UpdateIndicationsUI>g__updateTrackMinimapU7C87_1()
+extern void GameHandler_U3CUpdateIndicationsUIU3Eg__updateTrackMinimapU7C87_1_m022AC90B9A628E9292EE3FAF9E6A73ECFFAFBD4A (void);
+// 0x0000004E System.Void GameHandler::<UpdateIndicationsUI>g__setTrackerPositionU7C87_9(System.Double)
+extern void GameHandler_U3CUpdateIndicationsUIU3Eg__setTrackerPositionU7C87_9_m7620631F69F2E73AC2C68F62CAA8C43FB8DCACEE (void);
+// 0x0000004F System.Void GameHandler::<UpdateIndicationsUI>g__updateTimeTextU7C87_2()
+extern void GameHandler_U3CUpdateIndicationsUIU3Eg__updateTimeTextU7C87_2_m012AD1E3268941B299EBD0FD446F0ACA34EDE564 (void);
+// 0x00000050 System.Void GameHandler::<UpdateIndicationsUI>g__changeSpeedUIState1U7C87_3()
+extern void GameHandler_U3CUpdateIndicationsUIU3Eg__changeSpeedUIState1U7C87_3_m587AF9A1090F5F25E66A51DD1C2DFB67FFCDA580 (void);
+// 0x00000051 System.Void GameHandler::<UpdateIndicationsUI>g__rotateBodyU7C87_10(System.Double)
+extern void GameHandler_U3CUpdateIndicationsUIU3Eg__rotateBodyU7C87_10_m5869457181A6A2BADDEF7C245C35F0A2DA7A64D3 (void);
+// 0x00000052 System.Void GameHandler::<UpdateIndicationsUI>g__updateTimeText1U7C87_4()
+extern void GameHandler_U3CUpdateIndicationsUIU3Eg__updateTimeText1U7C87_4_mA916B317FA466B5889A5856E0F4F39823506E953 (void);
+// 0x00000053 System.Void GameHandler::<UpdateIndicationsUI>g__changeSpeedUIState2U7C87_5()
+extern void GameHandler_U3CUpdateIndicationsUIU3Eg__changeSpeedUIState2U7C87_5_mED82F9136DBC005F7E4660B9A15F93FA33101CDD (void);
+// 0x00000054 System.Void GameHandler::<UpdateIndicationsUI>g__rotateBodyU7C87_11(System.Double)
+extern void GameHandler_U3CUpdateIndicationsUIU3Eg__rotateBodyU7C87_11_m9431064A2C2656A39178F6F02F04553A52FA76B2 (void);
+// 0x00000055 System.Void GameHandler::<UpdateIndicationsUI>g__updateTimeText2U7C87_6()
+extern void GameHandler_U3CUpdateIndicationsUIU3Eg__updateTimeText2U7C87_6_m2AD0FC042EBF6DA871B5844F8E5F78291BEBA08E (void);
+// 0x00000056 System.Void GameHandler::<UpdateIndicationsUI>g__updateTrackMinimapMultiU7C87_7()
+extern void GameHandler_U3CUpdateIndicationsUIU3Eg__updateTrackMinimapMultiU7C87_7_m38B41F4829D79FD22C850E0539DF938A07585BCD (void);
+// 0x00000057 System.Void GameHandler::<UpdateIndicationsUI>g__setTracker1PositionU7C87_12(System.Double)
+extern void GameHandler_U3CUpdateIndicationsUIU3Eg__setTracker1PositionU7C87_12_mDD30A220C64F64DF90999A75C281D8D64D4BD501 (void);
+// 0x00000058 System.Void GameHandler::<UpdateIndicationsUI>g__setTracker2PositionU7C87_13(System.Double)
+extern void GameHandler_U3CUpdateIndicationsUIU3Eg__setTracker2PositionU7C87_13_m2F0F324E12115D11EC3012F425F5236DBA2C5FD5 (void);
+// 0x00000059 System.Void GameHandler::<KeyHandler>g__tipToRestartU7C88_0()
+extern void GameHandler_U3CKeyHandlerU3Eg__tipToRestartU7C88_0_mDDC4D0F44AF71B067D50C9852E3BAF6C1DC5A241 (void);
+// 0x0000005A System.Void GameHandler::<KeyHandler>g__setCarPositionU7C88_1(System.Double,System.Double,System.Boolean)
+extern void GameHandler_U3CKeyHandlerU3Eg__setCarPositionU7C88_1_m3D90BB3F34707CEEDEC3D9A0D93985D0F12CFE42 (void);
+// 0x0000005B System.Void GameHandler::<KeyHandler>g__setCarLevelPositionU7C88_2(System.Boolean,System.Boolean)
+extern void GameHandler_U3CKeyHandlerU3Eg__setCarLevelPositionU7C88_2_m8EBDBD9E3AC9FA35F37BC401DD281330601F69E1 (void);
+// 0x0000005C System.Void GameHandler::<KeyHandler>g__carMovementU7C88_3(UnityEngine.Rigidbody2D,System.Int32)
+extern void GameHandler_U3CKeyHandlerU3Eg__carMovementU7C88_3_mD53AF48C02FA012CC1FCD4FCA88767CE0286FF7A (void);
+// 0x0000005D System.Void GameHandler::<KeyHandler>g__singleVerticalMovementU7C88_16(GameHandler_<>c__DisplayClass88_0&)
+extern void GameHandler_U3CKeyHandlerU3Eg__singleVerticalMovementU7C88_16_mDD0CE51EDFE3E6E6A6678FF58F9B5662DB8FB627 (void);
+// 0x0000005E System.Void GameHandler::<KeyHandler>g__singleHorizontalMovementU7C88_17(GameHandler_<>c__DisplayClass88_0&)
+extern void GameHandler_U3CKeyHandlerU3Eg__singleHorizontalMovementU7C88_17_m9D4BF87A5BF05F40746FEA5E283DA86C38A7F31E (void);
+// 0x0000005F System.Void GameHandler::<KeyHandler>g__mutliVerticalMovement1U7C88_18(GameHandler_<>c__DisplayClass88_0&)
+extern void GameHandler_U3CKeyHandlerU3Eg__mutliVerticalMovement1U7C88_18_mDD7ECB4F37292B9EE97A35260F9306DB4DAF521B (void);
+// 0x00000060 System.Void GameHandler::<KeyHandler>g__mutliHorizontalMovement1U7C88_19(GameHandler_<>c__DisplayClass88_0&)
+extern void GameHandler_U3CKeyHandlerU3Eg__mutliHorizontalMovement1U7C88_19_m01D3F7288AC130FB87D8F2863B3C5C1CE5BE5FAF (void);
+// 0x00000061 System.Void GameHandler::<KeyHandler>g__mutliVerticalMovement2U7C88_20(GameHandler_<>c__DisplayClass88_0&)
+extern void GameHandler_U3CKeyHandlerU3Eg__mutliVerticalMovement2U7C88_20_mE0D3EC26F4378BC1C9CEB3F4666A3F603F9A0461 (void);
+// 0x00000062 System.Void GameHandler::<KeyHandler>g__mutliHorizontalMovement2U7C88_21(GameHandler_<>c__DisplayClass88_0&)
+extern void GameHandler_U3CKeyHandlerU3Eg__mutliHorizontalMovement2U7C88_21_m9F14F68D46826D3C47CD4EC0847F2C0A419359A8 (void);
+// 0x00000063 System.Void GameHandler::<KeyHandler>g__setSpeedTo0U7C88_4(System.Boolean)
+extern void GameHandler_U3CKeyHandlerU3Eg__setSpeedTo0U7C88_4_mCB62C6419AEED57E94D6A4EC46A5CCA345301547 (void);
+// 0x00000064 System.Void GameHandler::<KeyHandler>g__setSpecifiedCarPositionU7C88_5(UnityEngine.Rigidbody2D,System.Double,System.Double,System.Boolean)
+extern void GameHandler_U3CKeyHandlerU3Eg__setSpecifiedCarPositionU7C88_5_m649ADFAE4A2982EF8884E6384EE164DECC6BF2D5 (void);
+// 0x00000065 System.Void GameHandler::<KeyHandler>g__parkAllCarsU7C88_6()
+extern void GameHandler_U3CKeyHandlerU3Eg__parkAllCarsU7C88_6_m14B438ABFAC4CAAC11D3FC86CB46DF01A85C51BA (void);
+// 0x00000066 System.Boolean GameHandler::<KeyHandler>g__pressedU7C88_7(UnityEngine.KeyCode)
+extern void GameHandler_U3CKeyHandlerU3Eg__pressedU7C88_7_mDA0D722CC53A07A51EA7AD3BB8FBF85BE43EE7C7 (void);
+// 0x00000067 System.Void GameHandler::<KeyHandler>g__returnToMenuU7C88_8()
+extern void GameHandler_U3CKeyHandlerU3Eg__returnToMenuU7C88_8_m7E68FC1447D09FFBA47A27CE078EB6AE96219BDA (void);
+// 0x00000068 System.Void GameHandler::<KeyHandler>g__gameKeysU7C88_9()
+extern void GameHandler_U3CKeyHandlerU3Eg__gameKeysU7C88_9_m96C4AB7946967D80A7828C344AC49FA7EDD76366 (void);
+// 0x00000069 System.Void GameHandler::<KeyHandler>g__menuKeysU7C88_10()
+extern void GameHandler_U3CKeyHandlerU3Eg__menuKeysU7C88_10_m9814013CB883AE7414E574601C74F1E612C5D7D5 (void);
+// 0x0000006A System.Void GameHandler::<KeyHandler>g__selectionLvlKeysU7C88_11()
+extern void GameHandler_U3CKeyHandlerU3Eg__selectionLvlKeysU7C88_11_m71BB1F6E0BF70D73672AF36F45FF4B1F5414A3BB (void);
+// 0x0000006B System.Void GameHandler::<KeyHandler>g__setCar2PositionLevelInitU7C88_22()
+extern void GameHandler_U3CKeyHandlerU3Eg__setCar2PositionLevelInitU7C88_22_m455F62774DC8D1DC09400CBA1C183498083B01F8 (void);
+// 0x0000006C System.Void GameHandler::<KeyHandler>g__selectionCarKeysU7C88_12()
+extern void GameHandler_U3CKeyHandlerU3Eg__selectionCarKeysU7C88_12_m7B2BFB46EDFBDCBC725B5F25EBA83DB370E99EC3 (void);
+// 0x0000006D System.Void GameHandler::<KeyHandler>g__globalKeysU7C88_13()
+extern void GameHandler_U3CKeyHandlerU3Eg__globalKeysU7C88_13_mF548EA895E9238CCE37A5AF7DEC36B31D994A138 (void);
+// 0x0000006E System.Void GameHandler::<KeyHandler>g__selectCarsMultiU7C88_14()
+extern void GameHandler_U3CKeyHandlerU3Eg__selectCarsMultiU7C88_14_mB8173937567F0D2657434F982575C2C4449AA24D (void);
+// 0x0000006F System.Void GameHandler::<KeyHandler>g__previousCar1U7C88_23()
+extern void GameHandler_U3CKeyHandlerU3Eg__previousCar1U7C88_23_m21A2C02AE3EE98D6D6FA3A01CDC0BEED3218614C (void);
+// 0x00000070 System.Void GameHandler::<KeyHandler>g__nextCar1U7C88_24()
+extern void GameHandler_U3CKeyHandlerU3Eg__nextCar1U7C88_24_mAD5FF12B2E399C56BAC9B2DCEB7F8BBCE8142D16 (void);
+// 0x00000071 System.Void GameHandler::<KeyHandler>g__previousCar2U7C88_25()
+extern void GameHandler_U3CKeyHandlerU3Eg__previousCar2U7C88_25_mDE8457E88180B7E96EC63EDC2A99DF13C08CFC68 (void);
+// 0x00000072 System.Void GameHandler::<KeyHandler>g__nextCar2U7C88_26()
+extern void GameHandler_U3CKeyHandlerU3Eg__nextCar2U7C88_26_m65D988815D05DAF679CD528EE596B2AC3C8A1196 (void);
+// 0x00000073 System.Void GameHandler::<KeyHandler>g__leaderboardU7C88_15()
+extern void GameHandler_U3CKeyHandlerU3Eg__leaderboardU7C88_15_m6EFE97C01F331899F1DB7E7F8763A9D17BB4342B (void);
+// 0x00000074 System.Void GameHandler::<ShowWinMessage>g__setCarPositionU7C90_0(System.Double,System.Double)
+extern void GameHandler_U3CShowWinMessageU3Eg__setCarPositionU7C90_0_m63F93669C3CC9F72B7DA59375900C4B2ABC0DDC6 (void);
+// 0x00000075 System.Void GameHandler::<ShowWinMessage>g__setCarLevelPositionU7C90_1()
+extern void GameHandler_U3CShowWinMessageU3Eg__setCarLevelPositionU7C90_1_m703CF988C02E8F220BEADF4AC553214953216824 (void);
+// 0x00000076 System.Void GameHandler::<MultiplayerWinHandler>g__setSpecifiedCarPositionU7C91_0(UnityEngine.Rigidbody2D,System.Double,System.Double)
+extern void GameHandler_U3CMultiplayerWinHandlerU3Eg__setSpecifiedCarPositionU7C91_0_mE279BF462DD6B884D290421EFC393D55DFDF1318 (void);
+// 0x00000077 System.Void MenuControl::Start()
 extern void MenuControl_Start_m94521D8E9626781A4084B8E97739796CBE8E8269 (void);
-// 0x00000075 System.Void MenuControl::Update()
+// 0x00000078 System.Void MenuControl::Update()
 extern void MenuControl_Update_mD721F080F952D946755B0BAADE435778C3E8E6B6 (void);
-// 0x00000076 System.Void MenuControl::startLevel(System.Int32)
+// 0x00000079 System.Void MenuControl::startLevel(System.Int32)
 extern void MenuControl_startLevel_m2B8C9B428F3DF15BA52ABE362099AE9A37C66510 (void);
-// 0x00000077 System.Void MenuControl::setPosition(System.Single,System.Single)
+// 0x0000007A System.Void MenuControl::setPosition(System.Single,System.Single)
 extern void MenuControl_setPosition_m48A8ED44CC8BB2C3C97A5655046EBC685BA6DD35 (void);
-// 0x00000078 System.Void MenuControl::.ctor()
+// 0x0000007B System.Void MenuControl::.ctor()
 extern void MenuControl__ctor_mB7A1459634192D5DAF1866BEE14719A32A2EFA03 (void);
-// 0x00000079 System.Void MenuControl::.cctor()
+// 0x0000007C System.Void MenuControl::.cctor()
 extern void MenuControl__cctor_m8C8F53DE3AE440C369482707FBA9E86CCFCCDA41 (void);
-// 0x0000007A System.Void ShowMusic::Start()
+// 0x0000007D System.Void ShowMusic::Start()
 extern void ShowMusic_Start_mE0EFC1E27E40C514FAE8209AFBF611E1A39D2B1E (void);
-// 0x0000007B System.Void ShowMusic::Update()
+// 0x0000007E System.Void ShowMusic::Update()
 extern void ShowMusic_Update_m2289344D259170DFFFE6A76808C8ACEF0C5BF38B (void);
-// 0x0000007C System.Void ShowMusic::.ctor()
+// 0x0000007F System.Void ShowMusic::.ctor()
 extern void ShowMusic__ctor_mF4F0190C3AA9BE851F73940615FB96AC848D9F38 (void);
-// 0x0000007D System.Void hintsManager::Start()
+// 0x00000080 System.Void hintsManager::Start()
 extern void hintsManager_Start_mA8D49CFB0F86C914053ACAC6773FF77B1A94AF6B (void);
-// 0x0000007E System.Void hintsManager::Update()
+// 0x00000081 System.Void hintsManager::Update()
 extern void hintsManager_Update_m4541CD020B27824DF1812A69B84505D3BE849413 (void);
-// 0x0000007F System.Void hintsManager::.ctor()
+// 0x00000082 System.Void hintsManager::.ctor()
 extern void hintsManager__ctor_mFC50AFEF479A21D44BE988F4A9D5965C0343E615 (void);
-// 0x00000080 System.Void selectedShow::Start()
+// 0x00000083 System.Void selectedShow::Start()
 extern void selectedShow_Start_m7C72780B763D57E7F1135E2379B1AFD93DCAB25B (void);
-// 0x00000081 System.Void selectedShow::Update()
+// 0x00000084 System.Void selectedShow::Update()
 extern void selectedShow_Update_mD935A6729678E6A606E02DBB6315ACA7E571F704 (void);
-// 0x00000082 System.Void selectedShow::.ctor()
+// 0x00000085 System.Void selectedShow::.ctor()
 extern void selectedShow__ctor_m13C6AAF42F5B2541F00BC1546525FD2E85300082 (void);
-static Il2CppMethodPointer s_methodPointers[130] = 
+static Il2CppMethodPointer s_methodPointers[133] = 
 {
 	showBestTimes_Start_m160AD162B0D0FCF96021BE4D790134DF3B8828AE,
 	showBestTimes_ShowBestTime_m7F708EE6E018B71076C1D28934F7BCD0AC45F91D,
 	showBestTimes_Update_mD30B14BEEE94578EC75FDF07ADF0E78BB9BC846D,
 	showBestTimes__ctor_mB3312A9C6F9192CF40BFD2127310AB62400B3C23,
-	showBestTimes_U3CShowBestTimeU3Eg__formatedStingU7C11_0_m565A96186A62E39C4A3327ED23363BC852BE3EAF,
-	showBestTimes_U3CShowBestTimeU3Eg__showInCanvasU7C11_1_m48E85F450FB1B8B5B744A580F5003C752AEB16F9,
+	showBestTimes_U3CShowBestTimeU3Eg__formatedStingU7C13_0_m2C007D7BFF5C7CFCFDA2AB91FEC86D10E735E841,
+	showBestTimes_U3CShowBestTimeU3Eg__showInCanvasU7C13_1_m2B8265131270B2228B280CB35123DAA7C30D60AF,
 	CameraFollow_Start_mA9B0BF6D65FDE2EC07572180BF67C67F711C1C8C,
 	CameraFollow_Update_mE47A8BFDC5449AF1D397AD9D049A2CB76BD0BE9D,
 	CameraFollow_FixedUpdate_mBF9AC25722C9FF8A0251A308BEC67DC528150756,
@@ -318,6 +324,9 @@ static Il2CppMethodPointer s_methodPointers[130] =
 	Level5Complete_Start_m6AFBB29EB306D719C85AFC2034BE2738D3CED8BE,
 	Level5Complete_Update_m3D5CD63D388C58A410AA89AF9B87DB31236A0F04,
 	Level5Complete__ctor_mB4056C7CBCE415071D5182921DD48418C1B27C0A,
+	Level6Completed_Start_m895CAD5FACCA0E1CD6953AAFCE6C3ABA65433DBB,
+	Level6Completed_Update_mAD0345F9295A8D5D28457F55AF9D4A286D166140,
+	Level6Completed__ctor_mE3502B7E48AF2DE7274692FC71F6CDDAB624575D,
 	FinishedView1_Start_m7D04DBB1FB1A29222B4D5A3BABC45652C647EE41,
 	FinishedView1_Update_m5630CC2439BE8D9B70334CBE633CBDE70AB8C293,
 	FinishedView1__ctor_m0B78CD6A9FF47C702C6C935B442421AD8044CC45,
@@ -340,63 +349,63 @@ static Il2CppMethodPointer s_methodPointers[130] =
 	GameHandler_MultiplayerWinHandler_m05FFA8DE12F9DFAAEA5DFDA8D59F11D631AA0DD8,
 	GameHandler__ctor_mE32FBA1F1F711E44C2A042C09C7CE357937EF18B,
 	GameHandler__cctor_mD7059E7D0F072ADF90F483223ADAD32756F541A7,
-	GameHandler_U3CCameraFollowU3Eg__makeVectorU7C85_0_m213909A9547EF4DAFB12F2740A3141E2D00899E1,
-	GameHandler_U3CCameraFollowU3Eg__gameViewU7C85_1_m6ADFCDD09F2BEC11D5663243293F5FE8CB8D18EB,
-	GameHandler_U3CCameraFollowU3Eg__IMP_fix2DCarPositionInLevelsU7C85_7_m5F84A75CF6973C1F49986583EFE7F99DA373ECFB,
-	GameHandler_U3CCameraFollowU3Eg__fix2DCarPositionInLevelsU7C85_8_m87468AF21BC9F40615E1EE46B488FE0C8D17F1D6,
-	GameHandler_U3CCameraFollowU3Eg__get2DCarPositionU7C85_9_mB5AF26CBF1B49D8D4B3431127B2D27D1CB52DB9D,
-	GameHandler_U3CCameraFollowU3Eg__IMP_fix2DCarPositionInLevels2U7C85_10_m9E951790CBDAC70426B67E29F954D68FA759C470,
-	GameHandler_U3CCameraFollowU3Eg__fix2DCarPositionInLevels2U7C85_11_mFF79A72C363B1343D13DBD3BC519D056BD18296E,
-	GameHandler_U3CCameraFollowU3Eg__get2DCarPosition2U7C85_12_m73E8112D545D0BD93DAEBAEB3DC13DB2B98B6B89,
-	GameHandler_U3CCameraFollowU3Eg__menuViewU7C85_2_m001F1FEA47A76BEC85672BFADBA395E9926B562B,
-	GameHandler_U3CCameraFollowU3Eg__selectCarViewU7C85_3_mC4DB29DEB1DAF84A4136E7A5FA74A182AC428322,
-	GameHandler_U3CCameraFollowU3Eg__selectViewU7C85_4_m368C29318FC52CAE9E0533E7A36876BDFE5BF248,
-	GameHandler_U3CCameraFollowU3Eg__multi_selectViewU7C85_5_m025D906DF5877D2A9F1BEADDE8F4368B02EF67E7,
-	GameHandler_U3CCameraFollowU3Eg__multiplayerLeaderBoardU7C85_6_m6FFE563BE04108349D5363FC95893B32F7A5C891,
-	GameHandler_U3CUpdateIndicationsUIU3Eg__changeSpeedUIStateU7C86_0_m6C00F388568545E4FD3FE1A0B75126726AB9D72B,
-	GameHandler_U3CUpdateIndicationsUIU3Eg__rotateBodyU7C86_8_mE40481C7B9A60FA1A3764AAA49C830F6BD034CC8,
-	GameHandler_U3CUpdateIndicationsUIU3Eg__updateTrackMinimapU7C86_1_m7E0D1B06BAAEA35438EEA8DABC12B5328D1B6EEE,
-	GameHandler_U3CUpdateIndicationsUIU3Eg__setTrackerPositionU7C86_9_m5406C46AA32098DC0E77587D96E05428CEB8D83C,
-	GameHandler_U3CUpdateIndicationsUIU3Eg__updateTimeTextU7C86_2_m0C98D9DCF4F85CF06A5D27473A54A6FE5812F124,
-	GameHandler_U3CUpdateIndicationsUIU3Eg__changeSpeedUIState1U7C86_3_m4F140431354B057271C3605A56C355D4DDA65798,
-	GameHandler_U3CUpdateIndicationsUIU3Eg__rotateBodyU7C86_10_m8A5A0C756CAAB30230BAA6D8BAEB0ECC35B3C681,
-	GameHandler_U3CUpdateIndicationsUIU3Eg__updateTimeText1U7C86_4_m8BDEEB56481918242C8C0A78559B1A502B080940,
-	GameHandler_U3CUpdateIndicationsUIU3Eg__changeSpeedUIState2U7C86_5_m10A29234A1F8CEB334A7FDB15A3100EE3822FFBD,
-	GameHandler_U3CUpdateIndicationsUIU3Eg__rotateBodyU7C86_11_m733ACCF0CC68A414709819C3D8D3467931117B08,
-	GameHandler_U3CUpdateIndicationsUIU3Eg__updateTimeText2U7C86_6_mC2029030FD229B6FB19CE71869EDAD712813A518,
-	GameHandler_U3CUpdateIndicationsUIU3Eg__updateTrackMinimapMultiU7C86_7_mE415EECA222DB0109477A4968B953E82129CD6C9,
-	GameHandler_U3CUpdateIndicationsUIU3Eg__setTracker1PositionU7C86_12_m9C07A0F96D305C6021A5FF5EB31DF949D701570A,
-	GameHandler_U3CUpdateIndicationsUIU3Eg__setTracker2PositionU7C86_13_m01A749EE004E9546DAA96F09AA46FDECCF558AEB,
-	GameHandler_U3CKeyHandlerU3Eg__tipToRestartU7C87_0_m5C0B12F21C337DBC894033F7A4389BA6C76F12D4,
-	GameHandler_U3CKeyHandlerU3Eg__setCarPositionU7C87_1_m3E9262D38EC259E7CA74A429601F0CD13553D80B,
-	GameHandler_U3CKeyHandlerU3Eg__setCarLevelPositionU7C87_2_mDE3B540A26E3A038B192E42C404E09D550F30A1D,
-	GameHandler_U3CKeyHandlerU3Eg__carMovementU7C87_3_m888E5D0A46ED5F71ED0BA2AC4060031158EACED7,
-	GameHandler_U3CKeyHandlerU3Eg__singleVerticalMovementU7C87_16_mE29296CE539B283A40F4FB508B6595B4152CE1F6,
-	GameHandler_U3CKeyHandlerU3Eg__singleHorizontalMovementU7C87_17_mD219860EE15066CB1B29B91F9666B90AE3625BBA,
-	GameHandler_U3CKeyHandlerU3Eg__mutliVerticalMovement1U7C87_18_m0DE5475908AE4C15F8FA410564D3D5A08095A110,
-	GameHandler_U3CKeyHandlerU3Eg__mutliHorizontalMovement1U7C87_19_mA9D72A0FD09088D136A970374A9FCC830BECBA13,
-	GameHandler_U3CKeyHandlerU3Eg__mutliVerticalMovement2U7C87_20_mE99DE231D06D100BFC92F19245172F8B7CC67EF5,
-	GameHandler_U3CKeyHandlerU3Eg__mutliHorizontalMovement2U7C87_21_m3B5025D69BD73D26ED75037FA849309DC92E21E1,
-	GameHandler_U3CKeyHandlerU3Eg__setSpeedTo0U7C87_4_m006DE720F8C86D300EDBBCB4F82E3BD5D5233222,
-	GameHandler_U3CKeyHandlerU3Eg__setSpecifiedCarPositionU7C87_5_m97B11C42A9B970826CFC52EBA8502E534BD26118,
-	GameHandler_U3CKeyHandlerU3Eg__parkAllCarsU7C87_6_m60E1284DB26ADF667CD96633AE62E8C1534735EF,
-	GameHandler_U3CKeyHandlerU3Eg__pressedU7C87_7_m3DEDBB8D8A5681F16DA218138C97C01CAD6660EC,
-	GameHandler_U3CKeyHandlerU3Eg__returnToMenuU7C87_8_m076E63F95EEB03F474C7FFB426B9B194BD2129E6,
-	GameHandler_U3CKeyHandlerU3Eg__gameKeysU7C87_9_m8107DFB91C35071B764590026B76030B69930B9B,
-	GameHandler_U3CKeyHandlerU3Eg__menuKeysU7C87_10_mCFC576F6AB78B8845E11BA81ACE04440BF87AB55,
-	GameHandler_U3CKeyHandlerU3Eg__selectionLvlKeysU7C87_11_mB088E330B7A1CA340325E81E905D57A3E2E595CA,
-	GameHandler_U3CKeyHandlerU3Eg__setCar2PositionLevelInitU7C87_22_m12D2F1261DD782F20CAACFD7C187E41D64C39CDA,
-	GameHandler_U3CKeyHandlerU3Eg__selectionCarKeysU7C87_12_m2CB07761C87B9575B6DA171C5E2CAA5179AE59CA,
-	GameHandler_U3CKeyHandlerU3Eg__globalKeysU7C87_13_mBCD8DD6AF6A98E40A7F7F15351FE924D57A733CA,
-	GameHandler_U3CKeyHandlerU3Eg__selectCarsMultiU7C87_14_mCDBD81A7D1E349544F88E00A597AA66B3D914AC7,
-	GameHandler_U3CKeyHandlerU3Eg__previousCar1U7C87_23_mFDF159A532EC81507B329C61207C7853D1B2B812,
-	GameHandler_U3CKeyHandlerU3Eg__nextCar1U7C87_24_m4D0D3855C78EB437664EE049241AC2E03BEFA535,
-	GameHandler_U3CKeyHandlerU3Eg__previousCar2U7C87_25_mADC59E6D3AB8CA19C193BC817FCC8046BBC4ED80,
-	GameHandler_U3CKeyHandlerU3Eg__nextCar2U7C87_26_m3BA6FEDE0FC346B0EE971779DF358231040E2675,
-	GameHandler_U3CKeyHandlerU3Eg__leaderboardU7C87_15_m8F3379B494FB009686CD4DDA79D68C9CBD645BC4,
-	GameHandler_U3CShowWinMessageU3Eg__setCarPositionU7C89_0_m2CB3C046FB100B9CD3FDFB6A6282F7F97B882F58,
-	GameHandler_U3CShowWinMessageU3Eg__setCarLevelPositionU7C89_1_m2FF9BA3ADE5C665474CCFB1E7BE51B5E24B9E416,
-	GameHandler_U3CMultiplayerWinHandlerU3Eg__setSpecifiedCarPositionU7C90_0_m5069DCF2964F25842911733EAF347BEE8F5C8B03,
+	GameHandler_U3CCameraFollowU3Eg__makeVectorU7C86_0_m43A850FDC0705F209B2844A3A6143185D3D9DBDD,
+	GameHandler_U3CCameraFollowU3Eg__gameViewU7C86_1_m980CC21C80A19D63A0123292B95EABB011722182,
+	GameHandler_U3CCameraFollowU3Eg__IMP_fix2DCarPositionInLevelsU7C86_7_m1A26EC340603B5D32B40E27F32EEEAD2C4A7EE7C,
+	GameHandler_U3CCameraFollowU3Eg__fix2DCarPositionInLevelsU7C86_8_m6AD18C303E6A7EA12643791B0A094AD88516221C,
+	GameHandler_U3CCameraFollowU3Eg__get2DCarPositionU7C86_9_m58C70784CCA3359B9922A85173A26C88B2B54514,
+	GameHandler_U3CCameraFollowU3Eg__IMP_fix2DCarPositionInLevels2U7C86_10_mBB0EF61F1BD6F2BE8DAB7E3BEF12C7008B36933B,
+	GameHandler_U3CCameraFollowU3Eg__fix2DCarPositionInLevels2U7C86_11_m49B6A6736CCCB0CDF35C114C8BABC048D4DD7C32,
+	GameHandler_U3CCameraFollowU3Eg__get2DCarPosition2U7C86_12_mF35EC664E05BCA65892C8FB7CFA17D40A45CD340,
+	GameHandler_U3CCameraFollowU3Eg__menuViewU7C86_2_mEDCFF3125E44D723DE5BC5D6537A751C110DD00F,
+	GameHandler_U3CCameraFollowU3Eg__selectCarViewU7C86_3_m41DC575A1BDED64C100B5D4CE2004A412B831121,
+	GameHandler_U3CCameraFollowU3Eg__selectViewU7C86_4_mD4AE94A8F5A89FE81FFEAA5DF29E22CD403A73C4,
+	GameHandler_U3CCameraFollowU3Eg__multi_selectViewU7C86_5_m26D6C0758D04D6D93CD4740F1BCCD33D8440DB7E,
+	GameHandler_U3CCameraFollowU3Eg__multiplayerLeaderBoardU7C86_6_m569BEFC6C247028A8FA4E7722CACDAF737CE0CAD,
+	GameHandler_U3CUpdateIndicationsUIU3Eg__changeSpeedUIStateU7C87_0_mD493D52B82B3498B5064175755AAC4361A5799C4,
+	GameHandler_U3CUpdateIndicationsUIU3Eg__rotateBodyU7C87_8_mAF166CC26C47D0E2926E98773E223D7EBC294725,
+	GameHandler_U3CUpdateIndicationsUIU3Eg__updateTrackMinimapU7C87_1_m022AC90B9A628E9292EE3FAF9E6A73ECFFAFBD4A,
+	GameHandler_U3CUpdateIndicationsUIU3Eg__setTrackerPositionU7C87_9_m7620631F69F2E73AC2C68F62CAA8C43FB8DCACEE,
+	GameHandler_U3CUpdateIndicationsUIU3Eg__updateTimeTextU7C87_2_m012AD1E3268941B299EBD0FD446F0ACA34EDE564,
+	GameHandler_U3CUpdateIndicationsUIU3Eg__changeSpeedUIState1U7C87_3_m587AF9A1090F5F25E66A51DD1C2DFB67FFCDA580,
+	GameHandler_U3CUpdateIndicationsUIU3Eg__rotateBodyU7C87_10_m5869457181A6A2BADDEF7C245C35F0A2DA7A64D3,
+	GameHandler_U3CUpdateIndicationsUIU3Eg__updateTimeText1U7C87_4_mA916B317FA466B5889A5856E0F4F39823506E953,
+	GameHandler_U3CUpdateIndicationsUIU3Eg__changeSpeedUIState2U7C87_5_mED82F9136DBC005F7E4660B9A15F93FA33101CDD,
+	GameHandler_U3CUpdateIndicationsUIU3Eg__rotateBodyU7C87_11_m9431064A2C2656A39178F6F02F04553A52FA76B2,
+	GameHandler_U3CUpdateIndicationsUIU3Eg__updateTimeText2U7C87_6_m2AD0FC042EBF6DA871B5844F8E5F78291BEBA08E,
+	GameHandler_U3CUpdateIndicationsUIU3Eg__updateTrackMinimapMultiU7C87_7_m38B41F4829D79FD22C850E0539DF938A07585BCD,
+	GameHandler_U3CUpdateIndicationsUIU3Eg__setTracker1PositionU7C87_12_mDD30A220C64F64DF90999A75C281D8D64D4BD501,
+	GameHandler_U3CUpdateIndicationsUIU3Eg__setTracker2PositionU7C87_13_m2F0F324E12115D11EC3012F425F5236DBA2C5FD5,
+	GameHandler_U3CKeyHandlerU3Eg__tipToRestartU7C88_0_mDDC4D0F44AF71B067D50C9852E3BAF6C1DC5A241,
+	GameHandler_U3CKeyHandlerU3Eg__setCarPositionU7C88_1_m3D90BB3F34707CEEDEC3D9A0D93985D0F12CFE42,
+	GameHandler_U3CKeyHandlerU3Eg__setCarLevelPositionU7C88_2_m8EBDBD9E3AC9FA35F37BC401DD281330601F69E1,
+	GameHandler_U3CKeyHandlerU3Eg__carMovementU7C88_3_mD53AF48C02FA012CC1FCD4FCA88767CE0286FF7A,
+	GameHandler_U3CKeyHandlerU3Eg__singleVerticalMovementU7C88_16_mDD0CE51EDFE3E6E6A6678FF58F9B5662DB8FB627,
+	GameHandler_U3CKeyHandlerU3Eg__singleHorizontalMovementU7C88_17_m9D4BF87A5BF05F40746FEA5E283DA86C38A7F31E,
+	GameHandler_U3CKeyHandlerU3Eg__mutliVerticalMovement1U7C88_18_mDD7ECB4F37292B9EE97A35260F9306DB4DAF521B,
+	GameHandler_U3CKeyHandlerU3Eg__mutliHorizontalMovement1U7C88_19_m01D3F7288AC130FB87D8F2863B3C5C1CE5BE5FAF,
+	GameHandler_U3CKeyHandlerU3Eg__mutliVerticalMovement2U7C88_20_mE0D3EC26F4378BC1C9CEB3F4666A3F603F9A0461,
+	GameHandler_U3CKeyHandlerU3Eg__mutliHorizontalMovement2U7C88_21_m9F14F68D46826D3C47CD4EC0847F2C0A419359A8,
+	GameHandler_U3CKeyHandlerU3Eg__setSpeedTo0U7C88_4_mCB62C6419AEED57E94D6A4EC46A5CCA345301547,
+	GameHandler_U3CKeyHandlerU3Eg__setSpecifiedCarPositionU7C88_5_m649ADFAE4A2982EF8884E6384EE164DECC6BF2D5,
+	GameHandler_U3CKeyHandlerU3Eg__parkAllCarsU7C88_6_m14B438ABFAC4CAAC11D3FC86CB46DF01A85C51BA,
+	GameHandler_U3CKeyHandlerU3Eg__pressedU7C88_7_mDA0D722CC53A07A51EA7AD3BB8FBF85BE43EE7C7,
+	GameHandler_U3CKeyHandlerU3Eg__returnToMenuU7C88_8_m7E68FC1447D09FFBA47A27CE078EB6AE96219BDA,
+	GameHandler_U3CKeyHandlerU3Eg__gameKeysU7C88_9_m96C4AB7946967D80A7828C344AC49FA7EDD76366,
+	GameHandler_U3CKeyHandlerU3Eg__menuKeysU7C88_10_m9814013CB883AE7414E574601C74F1E612C5D7D5,
+	GameHandler_U3CKeyHandlerU3Eg__selectionLvlKeysU7C88_11_m71BB1F6E0BF70D73672AF36F45FF4B1F5414A3BB,
+	GameHandler_U3CKeyHandlerU3Eg__setCar2PositionLevelInitU7C88_22_m455F62774DC8D1DC09400CBA1C183498083B01F8,
+	GameHandler_U3CKeyHandlerU3Eg__selectionCarKeysU7C88_12_m7B2BFB46EDFBDCBC725B5F25EBA83DB370E99EC3,
+	GameHandler_U3CKeyHandlerU3Eg__globalKeysU7C88_13_mF548EA895E9238CCE37A5AF7DEC36B31D994A138,
+	GameHandler_U3CKeyHandlerU3Eg__selectCarsMultiU7C88_14_mB8173937567F0D2657434F982575C2C4449AA24D,
+	GameHandler_U3CKeyHandlerU3Eg__previousCar1U7C88_23_m21A2C02AE3EE98D6D6FA3A01CDC0BEED3218614C,
+	GameHandler_U3CKeyHandlerU3Eg__nextCar1U7C88_24_mAD5FF12B2E399C56BAC9B2DCEB7F8BBCE8142D16,
+	GameHandler_U3CKeyHandlerU3Eg__previousCar2U7C88_25_mDE8457E88180B7E96EC63EDC2A99DF13C08CFC68,
+	GameHandler_U3CKeyHandlerU3Eg__nextCar2U7C88_26_m65D988815D05DAF679CD528EE596B2AC3C8A1196,
+	GameHandler_U3CKeyHandlerU3Eg__leaderboardU7C88_15_m6EFE97C01F331899F1DB7E7F8763A9D17BB4342B,
+	GameHandler_U3CShowWinMessageU3Eg__setCarPositionU7C90_0_m63F93669C3CC9F72B7DA59375900C4B2ABC0DDC6,
+	GameHandler_U3CShowWinMessageU3Eg__setCarLevelPositionU7C90_1_m703CF988C02E8F220BEADF4AC553214953216824,
+	GameHandler_U3CMultiplayerWinHandlerU3Eg__setSpecifiedCarPositionU7C91_0_mE279BF462DD6B884D290421EFC393D55DFDF1318,
 	MenuControl_Start_m94521D8E9626781A4084B8E97739796CBE8E8269,
 	MenuControl_Update_mD721F080F952D946755B0BAADE435778C3E8E6B6,
 	MenuControl_startLevel_m2B8C9B428F3DF15BA52ABE362099AE9A37C66510,
@@ -413,7 +422,7 @@ static Il2CppMethodPointer s_methodPointers[130] =
 	selectedShow_Update_mD935A6729678E6A606E02DBB6315ACA7E571F704,
 	selectedShow__ctor_m13C6AAF42F5B2541F00BC1546525FD2E85300082,
 };
-static const int32_t s_InvokerIndices[130] = 
+static const int32_t s_InvokerIndices[133] = 
 {
 	23,
 	1326,
@@ -429,6 +438,9 @@ static const int32_t s_InvokerIndices[130] =
 	23,
 	1026,
 	31,
+	23,
+	23,
+	23,
 	23,
 	23,
 	23,
@@ -550,7 +562,7 @@ extern const Il2CppCodeGenModule g_AssemblyU2DCSharpCodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharpCodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	130,
+	133,
 	s_methodPointers,
 	s_InvokerIndices,
 	0,

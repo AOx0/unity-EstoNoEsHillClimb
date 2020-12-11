@@ -10,6 +10,7 @@ ScriptsOnlyBuild:
     - Level3Complete
     - Level4Complete
     - Level5Complete
+    - Level6Completed
     - ShowMusic
     - multiSelection
     - showBestTimes
@@ -101,6 +102,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14310}
     - Class: 114
       Script: {instanceID: 14380}
+    - Class: 114
+      Script: {instanceID: 138042}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -538,7 +541,7 @@ ScriptsOnlyBuild:
     className: selectedShow
   - hash:
       serializedVersion: 2
-      Hash: 4d6d073d82a840a62fcf789f4601a189
+      Hash: f6bdbbacc6529feace10bc987efc1fc4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: showBestTimes
@@ -704,6 +707,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 8d5896830d58d6c3fb20e43b215dd531
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Level6Completed
   platform: 20
   scenePathNames:
   - Assets/Scenes/GamePlay.unity
