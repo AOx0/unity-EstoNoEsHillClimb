@@ -21,6 +21,12 @@ Para correr el proyecto acceder a https://aox0.github.io/unity-EstoNoEsHillClimb
 
 # Features
 
+Problemas encontrados:
+
+​	- Instancia de coche aparece volteado cuando se cambia de single a multijugador. Solo ha pasado dos veces, aun no logro encontrar los pasos para replicar el problema.
+
+
+
 -   Menú de Inicio
 -   Musica
     -   Posibilidad de habilitar / des habilitar la música

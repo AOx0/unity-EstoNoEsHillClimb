@@ -56,6 +56,8 @@ public class GameHandler : MonoBehaviour
 
 
     public Canvas NewRecordCanvas;
+    public Canvas NewRecordCanvasMulti1;
+    public Canvas NewRecordCanvasMulti2;
 
     //Seguimiento de cámara
     public Camera camara;
@@ -194,6 +196,10 @@ public class GameHandler : MonoBehaviour
         levelActual = 0;
         stageJuego = StageJuego.Menu;
         tipoJuego = TipoJuego.Single;
+
+        NewRecordCanvas.enabled = false;
+        NewRecordCanvasMulti1.enabled = false;
+        NewRecordCanvasMulti2.enabled = false;
 
         
     }
@@ -472,7 +478,6 @@ public class GameHandler : MonoBehaviour
             }
 
 
-            print(movimiento);
 
             if (movimiento >= 0)
             {
@@ -1510,6 +1515,10 @@ public class GameHandler : MonoBehaviour
                 tiempoJugador2 = 0;
                 tiempoJugador1 = 0;
 
+                NewRecordCanvasMulti2.enabled = false;
+                NewRecordCanvasMulti1.enabled = false;
+                NewRecordCanvas.enabled = false;
+
                 stageJuego = StageJuego.Seleccion;
             }
         }
@@ -1704,11 +1713,123 @@ public class GameHandler : MonoBehaviour
 
     void MultiplayerWinHandler()
     {
+
+        void updateBestGlobalTime()
+        {
+            string time = finalTimePlayer1.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text;
+            time = time.Replace(" ", "");
+            time = time.Replace("Player1Time:", "");
+
+            string time2 = finalTimePlayer2.gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text;
+            time2 = time2.Replace(" ", "");
+            time2 = time2.Replace("Player2Time:", "");
+
+            float timeFloat2 = float.Parse(time2);
+
+            float timeFloat = float.Parse(time);
+
+            switch (levelActual)
+            {
+                case 1:
+                        
+                    if (timeFloat < showBestTimes.bestLevel1 && timeFloat < timeFloat2)
+                    {
+                        showBestTimes.bestLevel1 = timeFloat;
+                        NewRecordCanvasMulti1.enabled = true;
+                    }
+
+                    if (timeFloat2 < showBestTimes.bestLevel1 && timeFloat2 < timeFloat)
+                    {
+                        showBestTimes.bestLevel1 = timeFloat2;
+                        NewRecordCanvasMulti2.enabled = true;
+                    }
+                    break;
+                case 2:
+                        
+                    if (timeFloat < showBestTimes.bestLevel2 && timeFloat < timeFloat2)
+                    {
+                        showBestTimes.bestLevel2 = timeFloat;
+                        NewRecordCanvasMulti1.enabled = true;
+                    }
+
+                    if (timeFloat2 < showBestTimes.bestLevel2 && timeFloat2 < timeFloat)
+                    {
+                        showBestTimes.bestLevel2 = timeFloat2;
+                        NewRecordCanvasMulti2.enabled = true;
+                    }
+                    
+                    break;
+                case 3:
+                        
+                    if (timeFloat < showBestTimes.bestLevel3 && timeFloat < timeFloat2)
+                    {
+                        showBestTimes.bestLevel3 = timeFloat;
+                        NewRecordCanvasMulti1.enabled = true;
+                    }
+
+                    if (timeFloat2 < showBestTimes.bestLevel3 && timeFloat2 < timeFloat)
+                    {
+                        showBestTimes.bestLevel3 = timeFloat2;
+                        NewRecordCanvasMulti2.enabled = true;
+                    }
+                    break;
+                case 4:
+                        
+                    if (timeFloat < showBestTimes.bestLevel4 && timeFloat < timeFloat2)
+                    {
+                        showBestTimes.bestLevel4 = timeFloat;
+                        NewRecordCanvasMulti1.enabled = true;
+                    }
+
+                    if (timeFloat2 < showBestTimes.bestLevel4 && timeFloat2 < timeFloat)
+                    {
+                        showBestTimes.bestLevel4 = timeFloat2;
+                        NewRecordCanvasMulti2.enabled = true;
+                    }
+                    break;
+                case 5:
+
+                    if (timeFloat < showBestTimes.bestLevel5 && timeFloat < timeFloat2 )
+                    {
+                        showBestTimes.bestLevel5 = timeFloat;
+                        NewRecordCanvasMulti1.enabled = true;
+                    }
+
+                    if (timeFloat2 < showBestTimes.bestLevel5 && timeFloat2 < timeFloat)
+                    {
+                        showBestTimes.bestLevel5 = timeFloat2;
+                        NewRecordCanvasMulti2.enabled = true;
+                    }
+                    break;
+                case 6:
+
+                    if (timeFloat < showBestTimes.bestLevel6 && timeFloat < timeFloat2)
+                    {
+                        showBestTimes.bestLevel6 = timeFloat;
+                        NewRecordCanvasMulti1.enabled = true;
+                    }
+
+                    if (timeFloat2 < showBestTimes.bestLevel6 && timeFloat2 < timeFloat)
+                    {
+                        showBestTimes.bestLevel6 = timeFloat2;
+                        NewRecordCanvasMulti2.enabled = true;
+                    }
+                    break;
+
+            }
+        }
+
         void setSpecifiedCarPosition(Rigidbody2D coche, double x, double y)
         {
             coche.transform.position = new Vector2 { x = (float)x, y = (float)y};
             coche.transform.rotation = new Quaternion { z = 0 };
         }
+
+        if (stageJuego == StageJuego.PostJuegoMulti)
+        {
+            updateBestGlobalTime();
+        }
+
 
         if (stageJuego == StageJuego.Juego)
         {
