@@ -96,17 +96,17 @@ La estructura del código es simple. Se cuenta con un objeto principal encargado
 
 
 # El proceso
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen1.png)
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen2.png)
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen3.png)
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen4.png)
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen5.png)
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen6.png)
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen7.png)
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen8.png)
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen9.png)
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen10.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen1.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen2.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen3.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen4.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen5.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen6.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen7.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen8.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen9.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen10.png)
 
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/imagen11.png)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen11.png)
 
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/main/res/gif1.gif)
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/gif1.gif)
