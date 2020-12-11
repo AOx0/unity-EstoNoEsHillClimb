@@ -8,10 +8,10 @@ Para correr el proyecto acceder a https://aox0.github.io/unity-EstoNoEsHillClimb
 
 ### Indice
 
-1.  [Features (juego)](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/Readme.md#features)
+1.  [Features (juego)](https://github.com/AOx0/unity-EstoNoEsHillClimb#features)
 
-2.  [El proyecto (código)](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/Readme.md#el-proyecto)
-3.  [El proceso de creación](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/Readme.md#el-proceso)
+2.  [El proyecto (código)](https://github.com/AOx0/unity-EstoNoEsHillClimb#el-proyecto)
+3.  [El proceso de creación](https://github.com/AOx0/unity-EstoNoEsHillClimb#el-proceso)
 
 
 
