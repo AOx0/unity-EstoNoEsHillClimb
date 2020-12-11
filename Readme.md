@@ -15,6 +15,10 @@ Para correr el proyecto acceder a https://aox0.github.io/unity-EstoNoEsHillClimb
 
 
 
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/gif1.gif)
+
+
+
 # Features
 
 -   Menú de Inicio
@@ -85,28 +89,42 @@ Para correr el proyecto acceder a https://aox0.github.io/unity-EstoNoEsHillClimb
 
 El código está en su mayoría en inglés, al igual que el juego. Todo el proyecto se encuentra en la carpeta `Project`, si desean revisarlo solo clonen este repositorio y agreguen dicha carpeta a Unity Hub.
 
-Carpeta con todo el código en:  Project / Assets / [**Scripts**](https://github.com/AOx0/unity-EstoNoEsHillClimb/tree/master/Project/Assets/Scripts) /
+**Carpeta con el código**:  Project / Assets / [**Scripts**](https://github.com/AOx0/unity-EstoNoEsHillClimb/tree/master/Project/Assets/Scripts) /
 
 
 
-**Todo el código fue escrito por mi**, de igual forma **todo el material visual fue hecho por mi**. La música fue hecha por LitKidBeats, titulada "GOOD VIBES 2.0" está disponible en youtube y en su página litkidbeats.com.
+La estructura del código es simple. Se cuenta con un objeto principal encargado de realizar todos los procesos que requiere el juego llamado `GameHandler` el cual funciona de manera casi independiendte. Además del 'Handler' principal se encuentran varios scripts que se encargan de escuchar los atributos estáticos de la clase `GameHandler` y actualizar cierto elemento en la vista del usuario
 
-La estructura del código es simple. Se cuenta con un objeto principal encargado de realizar todos los procesos que requiere el juego `Game Handler` el cual funciona de manera 100% independiendte. Además del Handler principal se encuentran varios Scripts que se encargan de escuchar los atributos estáticos de la clase `GameHandler` y actualizar cierto elemento en la vista del usuario
+
+
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen0.png)
 
 
 
 # El proceso
+**Todo el código fue escrito por mi**, de igual forma **todo el material visual fue hecho por mi**. La música fue hecha por LitKidBeats, titulada "GOOD VIBES 2.0" está disponible en youtube y en su página litkidbeats.com.
+
+
+
 ![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen1.png)
+
 ![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen2.png)
+
 ![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen3.png)
+
 ![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen4.png)
+
 ![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen5.png)
+
 ![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen6.png)
+
 ![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen7.png)
+
 ![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen8.png)
+
 ![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen9.png)
+
 ![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen10.png)
 
 ![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen11.png)
 
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/gif1.gif)
