@@ -12,7 +12,6 @@ Para correr el proyecto acceder a https://aox0.github.io/unity-EstoNoEsHillClimb
 1.  [Features (juego)](https://github.com/AOx0/unity-EstoNoEsHillClimb#features)
 
 2.  [El proyecto (código)](https://github.com/AOx0/unity-EstoNoEsHillClimb#el-proyecto)
-3.  [El proceso de creación](https://github.com/AOx0/unity-EstoNoEsHillClimb#el-proceso)
 
 
 
@@ -105,33 +104,4 @@ La estructura del código es simple. Se cuenta con un objeto principal encargado
 
 
 ![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen0.png)
-
-
-
-# El proceso
-**Todo el código fue escrito por mi**, de igual forma **todo el material visual fue hecho por mi**. La música fue hecha por LitKidBeats, titulada "GOOD VIBES 2.0" está disponible en youtube y en su página litkidbeats.com.
-
-
-
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen1.png)
-
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen2.png)
-
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen3.png)
-
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen4.png)
-
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen5.png)
-
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen6.png)
-
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen7.png)
-
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen8.png)
-
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen9.png)
-
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen10.png)
-
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen11.png)
 
