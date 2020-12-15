@@ -9,9 +9,9 @@ Para correr el proyecto acceder a https://aox0.github.io/unity-EstoNoEsHillClimb
 
 ### Indice
 
-1.  [Features (juego)](https://github.com/AOx0/unity-EstoNoEsHillClimb#features)
+1.  [El proyecto (código)](https://github.com/AOx0/unity-EstoNoEsHillClimb#el-proyecto)
 
-2.  [El proyecto (código)](https://github.com/AOx0/unity-EstoNoEsHillClimb#el-proyecto)
+2.  [Features (juego)](https://github.com/AOx0/unity-EstoNoEsHillClimb#features)
 
 # El proyecto
 
