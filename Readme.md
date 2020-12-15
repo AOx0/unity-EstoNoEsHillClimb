@@ -13,19 +13,26 @@ Para correr el proyecto acceder a https://aox0.github.io/unity-EstoNoEsHillClimb
 
 2.  [El proyecto (código)](https://github.com/AOx0/unity-EstoNoEsHillClimb#el-proyecto)
 
+# El proyecto
+
+El código está en su mayoría en inglés, al igual que el juego. Todo el proyecto se encuentra en la carpeta `Project`, si desean revisarlo solo clonen este repositorio y agreguen dicha carpeta a Unity Hub.
+
+**Carpeta con el código**:  Project / Assets / [**Scripts**](https://github.com/AOx0/unity-EstoNoEsHillClimb/tree/master/Project/Assets/Scripts) /
 
 
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/gif1.gif)
+
+La estructura del código es simple. Se cuenta con un objeto principal encargado de realizar todos los procesos que requiere el juego llamado `GameHandler` el cual funciona de manera casi independiendte. Además del 'Handler' principal se encuentran varios scripts que se encargan de escuchar los atributos estáticos de la clase `GameHandler` y actualizar cierto elemento en la vista del usuario
+
+
+
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen0.png)
+
+
+
 
 
 
 # Features
-
-Problemas encontrados:
-
-​	- Instancia de coche aparece volteado cuando se cambia de single a multijugador. Solo ha pasado dos veces, aun no logro encontrar los pasos para replicar el problema.
-
-
 
 -   Menú de Inicio
 -   Musica
@@ -89,19 +96,4 @@ Problemas encontrados:
     -   Si el usuario presiona un key de frenado el coche cambia a 0 de manera agresiva sin importar si va de reversa o acelerando
 -   Imagenes con una paleta de colores bastante oscura.
 
-
-
-# El proyecto
-
-El código está en su mayoría en inglés, al igual que el juego. Todo el proyecto se encuentra en la carpeta `Project`, si desean revisarlo solo clonen este repositorio y agreguen dicha carpeta a Unity Hub.
-
-**Carpeta con el código**:  Project / Assets / [**Scripts**](https://github.com/AOx0/unity-EstoNoEsHillClimb/tree/master/Project/Assets/Scripts) /
-
-
-
-La estructura del código es simple. Se cuenta con un objeto principal encargado de realizar todos los procesos que requiere el juego llamado `GameHandler` el cual funciona de manera casi independiendte. Además del 'Handler' principal se encuentran varios scripts que se encargan de escuchar los atributos estáticos de la clase `GameHandler` y actualizar cierto elemento en la vista del usuario
-
-
-
-![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/imagen0.png)
-
+![img](https://github.com/AOx0/unity-EstoNoEsHillClimb/blob/master/res/gif1.gif)
