@@ -1,3 +1,9 @@
 *.bc filter=lfs diff=lfs merge=lfs -text
 *.resS filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
+
+
+Project\/(?!Assets\/Scripts\/$).* linguist-vendored
+Build/* linguist-vendored
+TemplateData/* linguist-vendored
+res/* linguist-vendored
